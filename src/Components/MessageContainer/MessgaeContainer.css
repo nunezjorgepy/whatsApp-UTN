@@ -1,3 +1,44 @@
 .msg_container{
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Mensajes */
+.msgs_container{
+    border: 1px solid red;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: auto;
+}
+
+/* Enviar Mensaje */
+.send_message{
+    display: flex;
+    align-items: center;
+    width: 95%;
+    padding: 7px 15px;
+    margin-bottom: 20px;
+    background-color: var(--neutral-000);
+    border-radius: 30px;
+}
+.send_message_input{
+    flex: 1;
+    border: none;
+}
+.send_message_input:focus{
+    outline: none;
+}
+.send_icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--unread-msg);
+    padding: 5px;
+    border-radius: 50%;
+}
+.send_icon i{
+    color: var(--neutral-000);
 }
