@@ -26,6 +26,10 @@ body{
   background-color: var(--neutral-100);
 }
 
+main{
+  display: flex;
+}
+
 a{
   text-decoration: none;
 }

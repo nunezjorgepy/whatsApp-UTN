@@ -3,7 +3,7 @@ import ContactContainer from '../../Components/ContactsContainer/ContactContaine
 
 function HomePage() {
     return (
-        <main className='home_main'>
+        <main>
             <ContactContainer />
             <section className="no_chat_opened">No hay chats abiertos</section>
         </main>

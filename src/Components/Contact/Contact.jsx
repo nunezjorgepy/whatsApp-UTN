@@ -8,7 +8,7 @@ function Contact() {
 
     return (
         <div href='https://www.google.com.ar' className='contact_width'>
-            <a href='https://www.google.com.ar' className="contact_flex">
+            <a href='/chat' className="contact_flex">
                 {/* Imagen de Perfil */}
                 <div className="img_container">
                     <img src="https://photosmint.com/wp-content/uploads/2025/03/beautiful-whatsapp-dp-boy.jpg" alt="Profile Pic" className="contact_profile_pic" />
