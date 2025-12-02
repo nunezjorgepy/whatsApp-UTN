@@ -1,8 +1,12 @@
 import './ContactContainer.css'
+/* Components */
+import Contact from '../Contact/Contact.jsx'
 
 function ContactContainer() {
     return (
-        <div>ContactContainer</div>
+        <div>
+            <Contact />
+        </div>
     )
 }
 
