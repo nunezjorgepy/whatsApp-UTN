@@ -2,12 +2,13 @@ import { useState } from 'react'
 import './Contact.css'
 
 function Contact() {
+    const [isLastMessageMine, setIsLastMessageMine] = useState(true)
     const [areUnreadMessages, setAreUnreadMessages] = useState(true)
 
 
     return (
-        <div className='contact_width'>
-            <div className="contact_flex">
+        <div href='https://www.google.com.ar' className='contact_width'>
+            <a href='https://www.google.com.ar' className="contact_flex">
                 {/* Imagen de Perfil */}
                 <div className="img_container">
                     <img src="https://photosmint.com/wp-content/uploads/2025/03/beautiful-whatsapp-dp-boy.jpg" alt="Profile Pic" className="contact_profile_pic" />
@@ -22,11 +23,12 @@ function Contact() {
                     </div>
                     <div className="contact_msg_bottom_row">
                         {/* Último mensaje y mensajes sin leer (de haber) */}
+                        {isLastMessageMine && <i class="bi bi-check2-all check_seen"></i>}
                         <div className="conact_last_msg">Ya estoy volviendo a casa</div>
-                        {areUnreadMessages && <div className="contact_unread_msgs">1</div>}
+                        {areUnreadMessages && <div className="contact_unread_msgs">10</div>}
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
     )
 }

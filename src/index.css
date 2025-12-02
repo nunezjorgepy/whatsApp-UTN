@@ -1,9 +1,29 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 
+:root{
+  /* Colores */
+  --neutral-000: #FFFFFF;
+  --neutral-100: #F7F5F3;
+  --neutral-200: #F6F5F4;
+
+  --neutral-900: #0A0A0A;
+  --neutral-1000-alpha-06: #00000099;
+
+  --unread-msg: #1DAA61;
+  --seen-msg: #007BFC;
+  --unseen-msg: rgba(0,0,0,0.2);
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+  color: var(--neutral-900);
+}
+
+body{
+  background-color: var(--neutral-100);
 }
 
 a{

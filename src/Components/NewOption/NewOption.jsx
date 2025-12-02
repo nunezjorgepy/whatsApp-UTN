@@ -9,13 +9,13 @@ function NewOption() {
                 </div>
 
                 <div className="new_options">
-                    <div className="new_contact">
+                    <button className="new_option new_contact">
                         <i class="bi bi-person-plus"></i>
-                    </div>
+                    </button>
 
-                    <div className="new_chat">
+                    <button className="new_option new_chat">
                         <i class="bi bi-chat-left"></i>
-                    </div>
+                    </button>
                 </div>
             </div>
         </div>

@@ -1,0 +1,21 @@
+
+
+.new_flex{
+    display: flex;
+    justify-content: space-between;
+}
+.new_whatsApp_logo{
+    font-family: Helvetica, sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--unread-msg);
+}
+.new_options{
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+.new_option{
+    background-color: transparent;
+    font-size: 17px;
+}
