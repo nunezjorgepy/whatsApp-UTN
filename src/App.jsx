@@ -1,11 +1,16 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import ContactContainer from './Components/ContactsContainer/ContactContainer'
+import HomePage from './pages/HomePage'
+
 
 function App() {
 
   return (
     <>
-      <ContactContainer />
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+      </Routes>
     </>
   )
 }
