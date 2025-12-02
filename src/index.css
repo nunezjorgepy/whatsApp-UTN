@@ -12,6 +12,7 @@
   --unread-msg: #1DAA61;
   --seen-msg: #007BFC;
   --unseen-msg: rgba(0,0,0,0.2);
+  --msg-bg-color: #D9FDD3;
 }
 
 *{

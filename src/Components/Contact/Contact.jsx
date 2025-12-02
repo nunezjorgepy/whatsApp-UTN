@@ -18,7 +18,7 @@ function Contact() {
                 <div className="contact_msg_info">
                     <div className="contact_msg_top_row">
                         {/* Nombre y hora del último mensaje */}
-                        <div className="contact_name">Marisa Delpodio</div>
+                        <div className="contact_name">Nombre del Contacto</div>
                         <div className="contact_last_msg_at">12:53</div>
                     </div>
                     <div className="contact_msg_bottom_row">

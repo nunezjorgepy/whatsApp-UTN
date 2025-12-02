@@ -8,7 +8,7 @@ function ChatHeader() {
                     <img className='chat_img' src="https://photosmint.com/wp-content/uploads/2025/03/beautiful-whatsapp-dp-boy.jpg" alt="Foto de Contacto" />
                 </div>
                 <div className="chat_name">
-                    Marisa Delpodio
+                    Nombre del Contacto
                 </div>
             </button>
             <a href="/" className="back_home">
