@@ -1,5 +1,5 @@
 import './HomePage.css'
-import ContactContainer from '../Components/ContactsContainer/ContactContainer'
+import ContactContainer from '../../Components/ContactsContainer/ContactContainer'
 
 function HomePage() {
     return (

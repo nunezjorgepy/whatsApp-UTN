@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import ContactContainer from './Components/ContactsContainer/ContactContainer'
-import HomePage from './pages/HomePage'
+import HomePage from './pages/HomePage/HomePage'
 
 
 function App() {
