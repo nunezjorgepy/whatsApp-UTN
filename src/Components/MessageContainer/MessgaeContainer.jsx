@@ -11,14 +11,14 @@ function MessgaeContainer() {
             {/* Mensajes */}
             <div className="msgs_container">
                 <Message />
-                <Message />
+                <Message isSendMessage />
             </div>
 
             {/* Enviar Mensaje */}
             <div className="send_message">
-                <input type="text" className="send_message_input" placeholder='Escribe un mensaje'/>
+                <input type="text" name='write_message_input' id='write_message_input' className="send_message_input" placeholder='Escribe un mensaje'/>
                 <button className="send_icon">
-                    <i class="bi bi-send"></i>
+                    <i className="bi bi-send"></i>
                 </button>
             </div>
         </section>

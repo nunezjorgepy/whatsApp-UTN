@@ -5,7 +5,6 @@
 }
 .msg_flex{
     display: flex;
-    justify-content: end;
     max-width: 350px;
     background-color: var(--neutral-000);
     padding: 5px;
@@ -18,7 +17,7 @@
     font-size: 10px;
     color: var(--neutral-1000-alpha-06);
 }
-.own_message{
+.own_message_bg_color{
     background-color: var(--msg-bg-color);
 }
 .own_message_justify{

@@ -10,11 +10,11 @@ function NewOption() {
 
                 <div className="new_options">
                     <button className="new_option new_contact">
-                        <i class="bi bi-person-plus"></i>
+                        <i className="bi bi-person-plus"></i>
                     </button>
 
                     <button className="new_option new_chat">
-                        <i class="bi bi-chat-left"></i>
+                        <i className="bi bi-chat-left"></i>
                     </button>
                 </div>
             </div>

@@ -12,7 +12,7 @@ function ChatHeader() {
                 </div>
             </button>
             <a href="/" className="back_home">
-                <i class="bi bi-arrow-left"></i>
+                <i className="bi bi-arrow-left"></i>
             </a>
         </div>
     )
