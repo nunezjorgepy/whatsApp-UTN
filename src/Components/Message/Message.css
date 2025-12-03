@@ -30,7 +30,7 @@
     display: none;
     gap: 10px;
     position: absolute;
-    left: 5%;
+    right: 5%;
     top: 90%;
     z-index: 10;
 }

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './ChatHeader.css'
 
 function ChatHeader() {
@@ -11,9 +12,9 @@ function ChatHeader() {
                     Nombre del Contacto
                 </div>
             </button>
-            <a href="/" className="back_home">
+            <Link to="/" className="back_home">
                 <i className="bi bi-arrow-left"></i>
-            </a>
+            </Link>
         </div>
     )
 }

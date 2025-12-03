@@ -6,14 +6,14 @@ import SearchBar from '../SearchBar/SearchBar.jsx'
 
 function ContactContainer() {
     return (
-        <section className='contact_container'>
+        <aside className='contact_container'>
             <NewOption />
             <SearchBar />
             <Contact />
             <Contact />
             <Contact />
             <Contact />
-        </section>
+        </aside>
     )
 }
 
