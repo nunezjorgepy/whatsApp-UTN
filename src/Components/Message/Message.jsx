@@ -11,7 +11,19 @@ function Message(props) {
             <div className={backgroundColorMessage}>
                 <div className="message_text">Hola! Bienvenido a mi copia de WhatsApp. Espero que te este gustando.</div>
                 <div className="message_hour">12:51</div>
+                <div className="message_options">
+                    <button className="msg_option edit_message">
+                        <i className="bi bi-pencil"></i>
+                    </button>
+                    <button className="msg_option delete_message">
+                        <i className="bi bi-trash3"></i>
+                    </button>
+                    <button className="msg_option react_message">
+                        <i className="bi bi-emoji-smile"></i>
+                    </button>
+                </div>
             </div>
+
         </div>
     )
 }

@@ -5,10 +5,11 @@
 }
 .msg_flex{
     display: flex;
+    position: relative;
     max-width: 350px;
     background-color: var(--neutral-000);
-    padding: 5px;
-    margin-top: 10px;
+    padding: 5px 10px;
+    margin-top: 20px;
     border-radius: 5px;
 }
 .message_hour{
@@ -22,4 +23,23 @@
 }
 .own_message_justify{
     justify-content: end;
+}
+
+.message_options{
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    left: 5%;
+    top: 90%;
+}
+.msg_option{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--neutral-000);
+    box-shadow: 0 0 2px gray;
+    font-size: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 500%;
 }

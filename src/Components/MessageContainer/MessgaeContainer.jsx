@@ -11,6 +11,9 @@ function MessgaeContainer() {
             {/* Mensajes */}
             <div className="msgs_container">
                 <Message />
+                <Message />
+                <Message isSendMessage />
+                <Message />
                 <Message isSendMessage />
             </div>
 
