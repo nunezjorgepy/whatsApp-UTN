@@ -24,7 +24,7 @@ function Contact() {
                     <div className="contact_msg_bottom_row">
                         {/* Último mensaje y mensajes sin leer (de haber) */}
                         {isLastMessageMine && <i className="bi bi-check2-all check_seen"></i>}
-                        <div className="conact_last_msg">Ya estoy volviendo a casa</div>
+                        <div className="conact_last_msg">YOU SHALL NOT PASS!</div>
                         {areUnreadMessages && <div className="contact_unread_msgs">10</div>}
                     </div>
                 </div>
