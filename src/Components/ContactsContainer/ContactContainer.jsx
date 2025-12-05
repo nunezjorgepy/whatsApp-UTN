@@ -4,21 +4,40 @@ import Contact from '../Contact/Contact.jsx'
 import NewOption from '../NewOption/NewOption.jsx'
 import SearchBar from '../SearchBar/SearchBar.jsx'
 import { getContactList } from '../../service/contactService.js'
-
-
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 
 function ContactContainer() {
-    console.log(getContactList())
+    const [contactList, setContactList] = useState([])
+
+    function loadContactList() {
+        const contact_list = getContactList();
+
+        // Guardo la respuesta en mi estado
+        setContactList(contact_list);
+    }
+
+    const HTMLContactList = contactList.map(
+        (contact) => {
+            return (
+                <Link to={`/chat/`} key={contact.contact_id}>
+                    <Contact contact={contact} />
+                </Link>
+            )
+        }
+    )
+
+    useEffect(
+        loadContactList,
+        []
+    )
 
     return (
         <aside className='contact_container'>
             <NewOption />
             <SearchBar />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
+            {HTMLContactList}
         </aside>
     )
 }

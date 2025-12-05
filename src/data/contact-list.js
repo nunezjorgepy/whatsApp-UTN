@@ -22,7 +22,7 @@ const concactList = [
         name: 'Gandalf the Grey',
         phone: 1134697584,
         avatar: `https://photosmint.com/wp-content/uploads/2025/03/beautiful-whatsapp-dp-boy.jpg`,
-        unread_messages: 3,
+        unread_messages: 1,
         messages: [
             {
                 message_id: 1001,
@@ -61,10 +61,10 @@ const concactList = [
         name: 'Legolas',
         phone: 1134697584,
         avatar: `https://photosmint.com/wp-content/uploads/2025/03/beautiful-whatsapp-dp-boy.jpg`,
-        unread_messages: 3,
+        unread_messages: 0,
         messages: [
             {
-                message_id: 1001,
+                message_id: 3001,
                 message: `Tendrías que haber traído más flechas!`,
                 message_at: new Date(),
                 isSentMessage: true,
@@ -77,7 +77,7 @@ const concactList = [
         name: 'Aragon',
         phone: 1134697584,
         avatar: `https://photosmint.com/wp-content/uploads/2025/03/beautiful-whatsapp-dp-boy.jpg`,
-        unread_messages: 3,
+        unread_messages: 2,
         messages: [
             {
                 message_id: 4001,
@@ -90,7 +90,7 @@ const concactList = [
                 message_id: 4002,
                 message: `Pero desaparecer completamente`,
                 message_at: new Date(),
-                isSentMessage: true,
+                isSentMessage: false,
                 message_state: `SEEN`
             },
     ]
