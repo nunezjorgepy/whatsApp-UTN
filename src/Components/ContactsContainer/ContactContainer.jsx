@@ -3,12 +3,13 @@ import './ContactContainer.css'
 import Contact from '../Contact/Contact.jsx'
 import NewOption from '../NewOption/NewOption.jsx'
 import SearchBar from '../SearchBar/SearchBar.jsx'
-import contactList from '../../data/contact-list.js'
+import { getContactList } from '../../service/contactService.js'
+
 
 
 
 function ContactContainer() {
-    console.log(contactList[1].messages[1].message_at)
+    console.log(getContactList())
 
     return (
         <aside className='contact_container'>
