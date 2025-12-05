@@ -21,7 +21,7 @@ function ContactContainer() {
     const HTMLContactList = contactList.map(
         (contact) => {
             return (
-                <Link to={`/chat/`} key={contact.contact_id}>
+                <Link to={`/chat/` + contact.contact_id} key={contact.contact_id}>
                     <Contact contact={contact} />
                 </Link>
             )
