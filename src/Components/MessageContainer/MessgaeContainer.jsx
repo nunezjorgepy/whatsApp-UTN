@@ -1,12 +1,18 @@
 import Message from '../Message/Message'
 import ChatHeader from '../ChatHeader/ChatHeader'
 import './MessgaeContainer.css'
+import { getContactList, getContactById } from "../../service/contactService"
+import { useParams } from 'react-router-dom'
 
 function MessgaeContainer() {
+    const { id: id } = useParams()
+    const contact = getContactById(id)
+    
+
     return (
         <section className='msg_container'>
             {/* Info del contacto */}
-            <ChatHeader />
+            <ChatHeader contact={contact} />
 
             {/* Mensajes */}
             <div className="msgs_container">
