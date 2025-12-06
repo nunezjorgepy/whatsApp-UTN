@@ -9,8 +9,8 @@ function Message(props) {
     return (
         <div className={justifyMessage}>
             <div className={backgroundColorMessage}>
-                <div className="message_text">Hola! Bienvenido a mi copia de WhatsApp. Espero que te este gustando.</div>
-                <div className="message_hour">12:51</div>
+                <p className="message_text">Hola! Bienvenido a mi copia de WhatsApp. Espero que te este gustando.</p>
+                <span className="message_hour">12:51</span>
                 <div className="message_options">
                     <button className="msg_option edit_message">
                         <i className="bi bi-pencil"></i>

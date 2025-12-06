@@ -18,14 +18,14 @@ function Contact(props) {
                 <div className="contact_msg_info">
                     <div className="contact_msg_top_row">
                         {/* Nombre y hora del último mensaje */}
-                        <div className="contact_name">{name}</div>
+                        <h2 className="contact_name">{name}</h2>
                         <div className="contact_last_msg_at">12:53</div>
                     </div>
                     <div className="contact_msg_bottom_row">
                         {/* Último mensaje y mensajes sin leer (de haber) */}
                         {lastMessage.isSentMessage && <i className="bi bi-check2-all check_seen"></i>}
-                        <div className="conact_last_msg">{lastMessage.message}</div>
-                        {unread_messages !== 0 && <div className="contact_unread_msgs">{unread_messages}</div>}
+                        <p className="conact_last_msg">{lastMessage.message}</p>
+                        {unread_messages !== 0 && <span className="contact_unread_msgs">{unread_messages}</span>}
                     </div>
                 </div>
             </div>

@@ -4,9 +4,9 @@ function NewOption() {
     return (
         <div className='new_container'>
             <div className="new_flex">
-                <div className="new_whatsApp_logo">
+                <h1 className="new_whatsApp_logo">
                     WhatsApp
-                </div>
+                </h1>
 
                 <div className="new_options">
                     <button className="new_option new_contact">

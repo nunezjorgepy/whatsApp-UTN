@@ -18,12 +18,12 @@ function MessgaeContainer() {
             </div>
 
             {/* Enviar Mensaje */}
-            <div className="send_message">
+            <form className="send_message">
                 <input type="text" name='write_message_input' id='write_message_input' className="send_message_input" placeholder='Escribe un mensaje'/>
                 <button className="send_icon">
                     <i className="bi bi-send"></i>
                 </button>
-            </div>
+            </form>
         </section>
     )
 }
