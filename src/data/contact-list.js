@@ -27,7 +27,7 @@ const concactList = [
             {
                 message_id: 1001,
                 message: `YOU SHALL NOT PASS`,
-                message_at: new Date(),
+                message_at: new Date("November 29, 2025 17:12:12"),
                 isSentMessage: false,
                 message_state: null
             }
@@ -66,7 +66,7 @@ const concactList = [
             {
                 message_id: 3001,
                 message: `Tendrías que haber traído más flechas!`,
-                message_at: new Date(),
+                message_at: new Date("December 1, 2025 03:02:12"),
                 isSentMessage: true,
                 message_state: `SEEN`
             }
@@ -82,14 +82,14 @@ const concactList = [
             {
                 message_id: 4001,
                 message: `Puedo ser invisible si quiero`,
-                message_at: new Date(),
-                isSentMessage: true,
+                message_at: new Date("November 30, 2025 12:27:00"),
+                isSentMessage: false,
                 message_state: `SEEN`
             },
             {
                 message_id: 4002,
                 message: `Pero desaparecer completamente`,
-                message_at: new Date(),
+                message_at: new Date("November 30, 2025 12:27:00"),
                 isSentMessage: false,
                 message_state: `SEEN`
             },

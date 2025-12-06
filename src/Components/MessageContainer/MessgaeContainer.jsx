@@ -7,6 +7,14 @@ import { useParams } from 'react-router-dom'
 function MessgaeContainer() {
     const { id: id } = useParams()
     const contact = getContactById(id)
+
+    const HTMLMessages = contact.messages.map(
+        (message) => {
+            return (
+                <Message key={message.message_id} message={message} />
+            )
+        }
+    )
     
 
     return (
@@ -16,11 +24,7 @@ function MessgaeContainer() {
 
             {/* Mensajes */}
             <div className="msgs_container">
-                <Message />
-                <Message />
-                <Message isSendMessage />
-                <Message />
-                <Message isSendMessage />
+                {HTMLMessages}
             </div>
 
             {/* Enviar Mensaje */}

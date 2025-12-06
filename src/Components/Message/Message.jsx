@@ -1,16 +1,21 @@
 import './Message.css'
 
 function Message(props) {
-    const { isSendMessage } = props
+    const { message } = props
 
-    const justifyMessage = isSendMessage ? "msg_horizontal_position own_message_justify" : "msg_horizontal_position"
-    const backgroundColorMessage = isSendMessage ? "msg_flex own_message_bg_color" : "msg_flex"
+    /* Dependiendo del tipo de mensaje, muestra una u otra cosa. */
+    const justifyMessage = message.isSentMessage ? "msg_horizontal_position own_message_justify" : "msg_horizontal_position"
+    const backgroundColorMessage = message.isSentMessage ? "msg_flex own_message_bg_color" : "msg_flex"
 
     return (
         <div className={justifyMessage}>
             <div className={backgroundColorMessage}>
-                <p className="message_text">Hola! Bienvenido a mi copia de WhatsApp. Espero que te este gustando.</p>
-                <span className="message_hour">12:51</span>
+                <p className="message_text">{message.message}</p>
+                <span className="message_hour">
+                    {message.message_at.getHours()}
+                    :
+                    {message.message_at.getMinutes()}
+                </span>
                 <div className="message_options">
                     <button className="msg_option edit_message">
                         <i className="bi bi-pencil"></i>
