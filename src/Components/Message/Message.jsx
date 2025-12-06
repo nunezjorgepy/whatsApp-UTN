@@ -7,6 +7,7 @@ function Message(props) {
     const justifyMessage = message.isSentMessage ? "msg_horizontal_position own_message_justify" : "msg_horizontal_position"
     const backgroundColorMessage = message.isSentMessage ? "msg_flex own_message_bg_color" : "msg_flex"
 
+
     return (
         <div className={justifyMessage}>
             <div className={backgroundColorMessage}>
@@ -19,22 +20,24 @@ function Message(props) {
 
                 {/* Opciones de mensajes */}
                 <div className="message_options">
-                    {/* Las opciones de editar y eliminar se muestran sólo en los mensajes enviados. La de reaccionar solo en los mensajes recibidos. */}
+                    {/*
+                        La opción de editar se muestra solamente para los mensajes enviados
+                        La opción de eliminar se muestra en ambos
+                        La opción de reaccionar se muestra solamente en los mensajes recibidos
+                    */}
                     {message.isSentMessage && 
-                    <>
-                        <button className="msg_option edit_message">
-                            <i className="bi bi-pencil"></i>
-                        </button>
-                        <button className="msg_option delete_message">
-                            <i className="bi bi-trash3"></i>
-                        </button>
-                    </>}
+                    <button className="msg_option edit_message">
+                        <i className="bi bi-pencil"></i>
+                    </button>
+                    }
+                    <button className="msg_option delete_message">
+                        <i className="bi bi-trash3"></i>
+                    </button>
                     {!message.isSentMessage &&
-                    <>
-                        <button className="msg_option react_message">
-                            <i className="bi bi-emoji-smile"></i>
-                        </button>
-                    </>}
+                    <button className="msg_option react_message">
+                        <i className="bi bi-emoji-smile"></i>
+                    </button>
+                    }
                 </div>
             </div>
 
