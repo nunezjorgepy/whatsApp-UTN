@@ -1,15 +1,17 @@
 import { Link } from 'react-router-dom'
 import './ChatHeader.css'
 
-function ChatHeader() {
+function ChatHeader(props) {
+    const { avatar, name } = props.contact;
+
     return (
         <div className="chat_header">
             <button className="show_contact_info">
                 <div className="img_container">
-                    <img className='chat_img' src="https://photosmint.com/wp-content/uploads/2025/03/beautiful-whatsapp-dp-boy.jpg" alt="Foto de Contacto" />
+                    <img className='chat_img' src={avatar} alt="Foto de Contacto" />
                 </div>
                 <h2 className="chat_name">
-                    Nombre del Contacto
+                    {name}
                 </h2>
             </button>
             <Link to="/" className="back_home">
