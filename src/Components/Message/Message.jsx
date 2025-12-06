@@ -16,16 +16,25 @@ function Message(props) {
                     :
                     {message.message_at.getMinutes()}
                 </span>
+
+                {/* Opciones de mensajes */}
                 <div className="message_options">
-                    <button className="msg_option edit_message">
-                        <i className="bi bi-pencil"></i>
-                    </button>
-                    <button className="msg_option delete_message">
-                        <i className="bi bi-trash3"></i>
-                    </button>
-                    <button className="msg_option react_message">
-                        <i className="bi bi-emoji-smile"></i>
-                    </button>
+                    {/* Las opciones de editar y eliminar se muestran sólo en los mensajes enviados. La de reaccionar solo en los mensajes recibidos. */}
+                    {message.isSentMessage && 
+                    <>
+                        <button className="msg_option edit_message">
+                            <i className="bi bi-pencil"></i>
+                        </button>
+                        <button className="msg_option delete_message">
+                            <i className="bi bi-trash3"></i>
+                        </button>
+                    </>}
+                    {!message.isSentMessage &&
+                    <>
+                        <button className="msg_option react_message">
+                            <i className="bi bi-emoji-smile"></i>
+                        </button>
+                    </>}
                 </div>
             </div>
 
