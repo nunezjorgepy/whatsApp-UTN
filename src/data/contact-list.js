@@ -21,7 +21,7 @@ const concactList = [
         contact_id: 1,
         name: 'Gandalf the Grey',
         phone: 1134697584,
-        avatar: `https://photosmint.com/wp-content/uploads/2025/03/beautiful-whatsapp-dp-boy.jpg`,
+        avatar: `https://scontent.faep14-3.fna.fbcdn.net/v/t39.30808-1/358641340_576837511324596_1257872081624141630_n.jpg?stp=c110.0.338.338a_dst-jpg_s200x200_tt6&_nc_cat=100&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=esxehfZU6zcQ7kNvwGj4Se5&_nc_oc=Admr2AKF3KRJRIrVoas0usYiSa40I8T19gBYIZ8Ia25osQntXatz177uCvXsb2HeAG1GUmqq43nHjUFm1-aous8j&_nc_zt=24&_nc_ht=scontent.faep14-3.fna&_nc_gid=IV_1bmHwxXt-HpMlznHb9g&oh=00_Afk5wAZAkVOA4BGO7-gxocsQjrYGLPstul0TCjmMOSPPtQ&oe=693A61A3`,
         unread_messages: 1,
         messages: [
             {
@@ -37,7 +37,7 @@ const concactList = [
         contact_id: 2,
         name: 'Frodo',
         phone: 1134891632,
-        avatar: `https://photosmint.com/wp-content/uploads/2025/03/beautiful-whatsapp-dp-boy.jpg`,
+        avatar: `https://i.pinimg.com/736x/a7/a6/68/a7a668ab346de7aea8e3733487f19521.jpg`,
         unread_messages: 0,
         messages: [
             {
@@ -60,7 +60,7 @@ const concactList = [
         contact_id: 3,
         name: 'Legolas',
         phone: 1134697584,
-        avatar: `https://photosmint.com/wp-content/uploads/2025/03/beautiful-whatsapp-dp-boy.jpg`,
+        avatar: `https://i.pinimg.com/736x/d7/63/94/d7639428a3f44e28900affcc2d34312b.jpg`,
         unread_messages: 0,
         messages: [
             {
@@ -76,7 +76,7 @@ const concactList = [
         contact_id: 4,
         name: 'Aragon',
         phone: 1134634584,
-        avatar: `https://photosmint.com/wp-content/uploads/2025/03/beautiful-whatsapp-dp-boy.jpg`,
+        avatar: `https://i.pinimg.com/736x/92/8f/b6/928fb663b8d316fc5aa3c39a2ab572a4.jpg`,
         unread_messages: 2,
         messages: [
             {

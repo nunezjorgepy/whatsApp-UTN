@@ -1,6 +1,4 @@
-import { useState } from 'react'
 import './Contact.css'
-import { Link } from 'react-router-dom'
 
 function Contact(props) {
     const { contact: {name, avatar, unread_messages, messages} } = props
