@@ -9,7 +9,7 @@ function Contact(props) {
             <div className="contact_flex">
                 {/* Imagen de Perfil */}
                 <div className="img_container">
-                    <img src={avatar} alt="Profile Pic" className="contact_profile_pic" />
+                    <img src={avatar} alt={"Foto de perfil de " + name } className="contact_profile_pic" />
                 </div>
 
                 {/* Información del mensaje */}

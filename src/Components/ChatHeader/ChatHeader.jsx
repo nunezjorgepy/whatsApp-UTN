@@ -8,7 +8,7 @@ function ChatHeader(props) {
         <div className="chat_header">
             <button className="show_contact_info">
                 <div className="img_container">
-                    <img className='chat_img' src={avatar} alt="Foto de Contacto" />
+                    <img className='chat_img' src={avatar} alt={"Foto de perfil de " + name} />
                 </div>
                 <h2 className="chat_name">
                     {name}
