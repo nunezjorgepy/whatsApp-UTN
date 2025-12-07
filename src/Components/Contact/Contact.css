@@ -60,6 +60,10 @@
 .check_seen{
     color: var(--seen-msg);
 }
+.no_messages{
+    font-style: italic;
+    font-size: 12px;
+}
 .contact_unread_msgs{
     display: flex;
     align-items: center;

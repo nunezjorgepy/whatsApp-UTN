@@ -28,7 +28,7 @@ function Contact(props) {
                             <p className="conact_last_msg">{lastMessage.message}</p>
                             {unread_messages !== 0 && <span className="contact_unread_msgs">{unread_messages}</span>}
                         </div>
-                        : <p className="conact_last_msg">No hay mensajes</p>}
+                        : <p className="conact_last_msg no_messages">No hay mensajes</p>}
                 </div>
             </div>
         </div>
