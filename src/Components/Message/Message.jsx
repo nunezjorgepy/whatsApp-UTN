@@ -3,7 +3,7 @@ import './Message.css'
 import { getContactById } from '../../service/contactService'
 
 function Message(props) {
-    const { message } = props
+    const { message, renderMessageComponent } = props
     const { id: id } = useParams()
     const contact = getContactById(id)
 
@@ -12,15 +12,17 @@ function Message(props) {
     const backgroundColorMessage = message.isSentMessage ? "msg_flex own_message_bg_color" : "msg_flex"
 
     function deleteMessage() {
-        /* Borra el mensaje seleccionado de la lista de mensajes */
-        /* TODO: finish funciton */
-        findMessageId()
+        /* 
+        Borra el mensaje seleccionado, eliminandolo de la lista de mensajes del contacto, y vuelve a renderizar los mensajes que quedan.
+        */
+        contact.messages.splice(findMessageId(), 1)
+        renderMessageComponent()
     }
 
     function editMessage() {
         /* Edita el mensaje seleccionado */
         /* TODO: finish funciton */
-        findMessageId()
+        const messageIndex = findMessageId()
     }
 
     function findMessageId(){

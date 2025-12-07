@@ -19,7 +19,10 @@ function MessgaeContainer() {
         const messages = contact.messages.map(
             message => {
                 return(
-                    <Message key={message.message_id} message={message} />
+                    <Message 
+                    key={message.message_id} 
+                    message={message} 
+                    renderMessageComponent={renderMessageComponent} />
                 )
             }
         )
