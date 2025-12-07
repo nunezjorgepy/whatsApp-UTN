@@ -1,7 +1,7 @@
 import Message from '../Message/Message'
 import ChatHeader from '../ChatHeader/ChatHeader'
 import './MessgaeContainer.css'
-import { getContactById, getContactList } from "../../service/contactService"
+import { getContactById } from "../../service/contactService"
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
@@ -10,7 +10,6 @@ function MessgaeContainer() {
     const [HTMLMessages, setHTMLMessages] = useState([])
     const [messageToSent, setMessageToSent] = useState('')
     const contact = getContactById(id)
-    const contactList = getContactList()
     
 
     function renderMessageComponent(){
@@ -37,7 +36,8 @@ function MessgaeContainer() {
             message_state: `NOT_SENT`
         })
 
-        console.log(contactList)
+        renderMessageComponent()
+        setMessageToSent('')
     }
 
     useEffect(
