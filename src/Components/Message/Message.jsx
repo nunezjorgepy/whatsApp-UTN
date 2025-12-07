@@ -1,11 +1,30 @@
+import { useParams } from 'react-router-dom'
 import './Message.css'
+import { getContactById } from '../../service/contactService'
 
 function Message(props) {
     const { message } = props
+    const { id: id } = useParams()
+    const contact = getContactById(id)
 
     /* Dependiendo del tipo de mensaje, muestra una u otra cosa. */
     const justifyMessage = message.isSentMessage ? "msg_horizontal_position own_message_justify" : "msg_horizontal_position"
     const backgroundColorMessage = message.isSentMessage ? "msg_flex own_message_bg_color" : "msg_flex"
+
+    function deleteMessage() {
+        /* Borra el mensaje seleccionado de la lista de mensajes */
+        /* TODO: finish funciton */
+    }
+
+    function editMessage() {
+        /* Edita el mensaje seleccionado */
+        /* TODO: finish funciton */
+    }
+
+    function findMessageById(){
+        /* Encuentra el mensaje según la id del mensaje */
+        /* TODO: finish funciton */
+    }
 
 
     return (
@@ -31,11 +50,11 @@ function Message(props) {
                         La opción de reaccionar se muestra solamente en los mensajes recibidos
                     */}
                     {message.isSentMessage && 
-                    <button className="msg_option edit_message">
+                    <button onClick={editMessage} className="msg_option edit_message">
                         <i className="bi bi-pencil"></i>
                     </button>
                     }
-                    <button className="msg_option delete_message">
+                    <button onClick={deleteMessage} className="msg_option delete_message">
                         <i className="bi bi-trash3"></i>
                     </button>
                     {!message.isSentMessage &&

@@ -27,7 +27,6 @@ function MessgaeContainer() {
     }
 
     function sendNewMessage(e){
-        /* Envía la información a la 'base de datos' */
         e.preventDefault()
 
         contact.messages.push({
@@ -43,7 +42,7 @@ function MessgaeContainer() {
 
     useEffect(
         renderMessageComponent,
-        []
+        [contact]
     )
 
     return (
