@@ -14,16 +14,23 @@ function Message(props) {
     function deleteMessage() {
         /* Borra el mensaje seleccionado de la lista de mensajes */
         /* TODO: finish funciton */
+        findMessageId()
     }
 
     function editMessage() {
         /* Edita el mensaje seleccionado */
         /* TODO: finish funciton */
+        findMessageId()
     }
 
-    function findMessageById(){
+    function findMessageId(){
         /* Encuentra el mensaje según la id del mensaje */
         /* TODO: finish funciton */
+        const foundMessage = contact.messages.findIndex(
+            (msg) => msg.message_id === message.message_id
+        )
+        
+        return foundMessage
     }
 
 
