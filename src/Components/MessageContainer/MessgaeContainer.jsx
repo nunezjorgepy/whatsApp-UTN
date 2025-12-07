@@ -5,6 +5,8 @@ import { getContactById } from "../../service/contactService"
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
+
+
 function MessgaeContainer() {
     const { id: id } = useParams()
     const [HTMLMessages, setHTMLMessages] = useState([])
@@ -29,7 +31,7 @@ function MessgaeContainer() {
         e.preventDefault()
 
         contact.messages.push({
-            message_id: contact.messages.message_id + 1,
+            message_id: contact.messages[contact.messages.length - 1].message_id + 1,
             message: messageToSent,
             message_at: new Date(),
             isSentMessage: true,
