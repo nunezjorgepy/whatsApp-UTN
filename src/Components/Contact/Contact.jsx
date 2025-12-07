@@ -22,15 +22,13 @@ function Contact(props) {
 
                     {/* Primero verifico que haya mensajes. SI los hay, muestro el último mensajes y las respectivas opciones. De no haber, muestro el mensaje "No hay mensajes" */}
                     {messages.length ? 
-                    <>
                         <div className="contact_msg_bottom_row">
                             {/* Último mensaje y mensajes sin leer (de haber) */}
                             {lastMessage.isSentMessage && <i className="bi bi-check2-all check_seen"></i>}
                             <p className="conact_last_msg">{lastMessage.message}</p>
                             {unread_messages !== 0 && <span className="contact_unread_msgs">{unread_messages}</span>}
                         </div>
-                    </>
-                    : <p className="conact_last_msg">No hay mensajes</p>}
+                        : <p className="conact_last_msg">No hay mensajes</p>}
                 </div>
             </div>
         </div>
