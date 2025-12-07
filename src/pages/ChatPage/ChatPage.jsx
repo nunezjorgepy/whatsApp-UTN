@@ -1,4 +1,3 @@
-import { useParams } from "react-router-dom"
 import ContactContainer from "../../Components/ContactsContainer/ContactContainer"
 import MessageContainer from "../../Components/MessageContainer/MessgaeContainer"
 

@@ -1,25 +1,20 @@
 import Message from '../Message/Message'
 import ChatHeader from '../ChatHeader/ChatHeader'
 import './MessgaeContainer.css'
-import { getContactById } from "../../service/contactService"
+import { getContactById, getContactList } from "../../service/contactService"
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 function MessgaeContainer() {
     const { id: id } = useParams()
     const [HTMLMessages, setHTMLMessages] = useState([])
+    const [messageToSent, setMessageToSent] = useState('')
     const contact = getContactById(id)
+    const contactList = getContactList()
+    
 
-    /* const HTMLMessages = contact.messages.map(
-        (message) => {
-            return (
-                <Message key={message.message_id} message={message} />
-            )
-        }
-    ) */
     function renderMessageComponent(){
         /* Función para setear los Message Components que se mostrarán en el chat */
-        console.log('Here I am?')
         const messages = contact.messages.map(
             message => {
                 return(
@@ -31,9 +26,24 @@ function MessgaeContainer() {
         setHTMLMessages(messages)
     }
 
+    function sendNewMessage(e){
+        /* Envía la información a la 'base de datos' */
+        e.preventDefault()
+
+        contact.messages.push({
+            message_id: contact.messages.message_id + 1,
+            message: messageToSent,
+            message_at: new Date(),
+            isSentMessage: true,
+            message_state: `NOT_SENT`
+        })
+
+        console.log(contactList)
+    }
+
     useEffect(
         renderMessageComponent,
-        [contact]
+        []
     )
 
     return (
@@ -47,12 +57,14 @@ function MessgaeContainer() {
             </div>
 
             {/* Enviar Mensaje */}
-            <form className="send_message">
+            <form className="send_message" onSubmit={(e) => sendNewMessage(e)}>
                 <input 
                     type="text" name='write_message_input' 
                     id='write_message_input' 
                     className="send_message_input" 
-                    placeholder='Escribe un mensaje'/>
+                    placeholder='Escribe un mensaje'
+                    value={messageToSent}
+                    onChange={(e) => setMessageToSent(e.target.value)}/>
                 <button className="send_icon">
                     <i className="bi bi-send"></i>
                 </button>
