@@ -11,6 +11,11 @@ function Message(props) {
     return (
         <div className={justifyMessage}>
             <div className={backgroundColorMessage}>
+                {message.isSentMessage &&
+                    <span className='chat_message_status'>
+                        <i className="bi bi-check2-all check_seen"></i>
+                    </span>
+                }
                 <p className="message_text">{message.message}</p>
                 <span className="message_hour">
                     {message.message_at.getHours()}
