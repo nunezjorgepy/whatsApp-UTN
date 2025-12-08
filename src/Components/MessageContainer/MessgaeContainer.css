@@ -11,6 +11,8 @@
     width: 100%;
     padding: 15px;
     margin-bottom: auto;
+    height: 80dvh;
+    overflow-y: scroll;
 }
 
 /* Enviar Mensaje */
@@ -56,6 +58,6 @@
     }
     .msgs_container{
         height: 90dvh;
-        overflow: scroll;
+        overflow-y: scroll;
     }
 }
