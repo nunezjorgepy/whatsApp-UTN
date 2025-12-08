@@ -13,6 +13,7 @@ function ContactContainer() {
     /* const [HTMLContactList, setHTMLContactList] = useState([]) */
 
     function loadContactList() {
+        /* Busca la lista de contactos en la 'base de datos' */
         const contact_list = getContactList();
 
         // Guardo la respuesta en mi estado
@@ -29,25 +30,8 @@ function ContactContainer() {
         }
     )
 
-    function renderContacts(){
-        const contactos = contactList.map(
-            (contact) => {
-                return (
-                    <Link to={`/chat/` + contact.contact_id} key={contact.contact_id}>
-                        <Contact contact={contact} />
-                    </Link>
-                )
-            }
-        )
-
-        setHTMLContactList(contactos)
-    }
-
     useEffect(
-        () => {
-            loadContactList()
-            /* renderContacts() */
-        },
+        loadContactList,
         []
     )
 
