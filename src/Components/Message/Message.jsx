@@ -46,9 +46,9 @@ function Message(props) {
                 }
                 <p className="message_text">{message.message}</p>
                 <span className="message_hour">
-                    {message.message_at.getHours()}
+                    {message.message_at.getHours() < 10 ? '0'+message.message_at.getHours() : message.message_at.getHours()}
                     :
-                    {message.message_at.getMinutes()}
+                    {message.message_at.getMinutes() < 10 ? '0'+message.message_at.getMinutes() : message.message_at.getMinutes()}
                 </span>
 
                 {/* Opciones de mensajes */}
