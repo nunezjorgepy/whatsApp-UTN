@@ -11,3 +11,9 @@
     color: var(--unread-msg);
     text-shadow: 1px 1px 1px gray;
 }
+
+@media screen and (max-width: 800px) {
+    .no_chat_opened{
+        display: none;
+    }
+}

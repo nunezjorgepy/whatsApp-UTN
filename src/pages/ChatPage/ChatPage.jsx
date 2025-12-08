@@ -7,7 +7,7 @@ function ChatPage() {
     return (
         <main>
             <ContactContainer />
-            <MessageContainer />
+            <MessageContainer />    {/* Un mejor nombre hubiera sido ChatContainer, pero por ahroa lo dejo así */}
         </main>
     )
 }
