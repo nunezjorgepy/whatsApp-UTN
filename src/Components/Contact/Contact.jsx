@@ -3,6 +3,15 @@ import './Contact.css'
 function Contact(props) {
     const { contact: {name, avatar, unread_messages, messages} } = props
     const lastMessage = messages[messages.length - 1]
+    
+    /* Seteando la hora de envío del mensaje para que figura como, por ejemplo, 03:02 en vez de 3:2 */
+    let sentAt
+    if (lastMessage) {
+        const hour = lastMessage.message_at.getHours() < 10 ? '0'+lastMessage.message_at.getHours() : lastMessage.message_at.getHours()
+        const minute = lastMessage.message_at.getMinutes() < 10 ? '0'+lastMessage.message_at.getMinutes() : lastMessage.message_at.getMinutes()
+
+        sentAt = `${hour}:${minute}`
+    }
 
     return (
         <div href='https://www.google.com.ar' className='contact_width'>
@@ -17,7 +26,7 @@ function Contact(props) {
                     <div className="contact_msg_top_row">
                         {/* Nombre y hora del último mensaje */}
                         <h2 className="contact_name">{name}</h2>
-                        <div className="contact_last_msg_at">12:53</div>
+                        <div className="contact_last_msg_at">{sentAt}</div>
                     </div>
 
                     {/* Primero verifico que haya mensajes. SI los hay, muestro el último mensajes y las respectivas opciones. De no haber, muestro el mensaje "No hay mensajes" */}

@@ -46,6 +46,7 @@ function Message(props) {
                 }
                 <p className="message_text">{message.message}</p>
                 <span className="message_hour">
+                    {/* Si la hora o los minutos es menor a 10, le agrega un 0 para que figure como, por ejemplo, 03:02 en vez de 3:2 */}
                     {message.message_at.getHours() < 10 ? '0'+message.message_at.getHours() : message.message_at.getHours()}
                     :
                     {message.message_at.getMinutes() < 10 ? '0'+message.message_at.getMinutes() : message.message_at.getMinutes()}
