@@ -33,7 +33,14 @@ function Contact(props) {
                     {messages.length ? 
                         <div className="contact_msg_bottom_row">
                             {/* Último mensaje y mensajes sin leer (de haber) */}
-                            {lastMessage.isSentMessage && <i className="bi bi-check2-all check_seen"></i>}
+                            {lastMessage.isSentMessage &&
+                            <span className='chat_message_status'>
+                                {lastMessage.message_state === 'NOT_SENT' ? <i class="bi bi-x-square"></i> :
+                                lastMessage.message_state === 'SENT' ? <i class="bi bi-check2"></i> :
+                                lastMessage.message_state === 'NOT_READ' ? <i class="bi bi-check2-all"></i> :
+                                lastMessage.message_state === 'SEEN' ? <i className="bi bi-check2-all check_seen"></i> : ''}
+                            </span>
+                        }
                             <p className="conact_last_msg">{lastMessage.message}</p>
                             {unread_messages !== 0 && <span className="contact_unread_msgs">{unread_messages}</span>}
                         </div>

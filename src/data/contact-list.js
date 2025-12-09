@@ -52,7 +52,7 @@ const concactList = [
                 message: `Destruya el anillo, Señor Frodo!!`,
                 message_at: new Date("November 28, 2025 05:23:12"),
                 isSentMessage: true,
-                message_state: `RECIEVED`
+                message_state: `SENT`
             },
         ]
     },
@@ -68,7 +68,7 @@ const concactList = [
                 message: `Tendrías que haber traído más flechas!`,
                 message_at: new Date("December 1, 2025 03:02:12"),
                 isSentMessage: true,
-                message_state: `SEEN`
+                message_state: `NOT_SENT`
             }
     ]
     },
