@@ -52,7 +52,10 @@ function NewOption() {
     }
 
     function verifyPhone() {
-        /* TODO */
+        /* Podría verificar si el número arranca en 11 y que el tercer dígito no sea 0, pero lo dejo para otro momento */
+        if (isNaN(newPhone) || newPhone.length !== 10) {
+            return false
+        }
         return true
     }
 
