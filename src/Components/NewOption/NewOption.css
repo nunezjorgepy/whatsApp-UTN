@@ -19,3 +19,58 @@
     background-color: transparent;
     font-size: 17px;
 }
+
+/* Formulario de nuevo contacto */
+.new_contact_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+    z-index: 100;
+}
+.new_contact_form{
+    background-color: var(--neutral-000);
+    width: min(350px, 100%);
+    padding: 25px;
+    border-radius: var(--new-form-border-radius);
+}
+.new_contact_name, .new_contact_phone{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+.new_contact_label{
+    display: flex;
+    gap: 5px;
+    font-size: 13px;
+    font-weight: 600;
+}
+.new_contact_input{
+    padding: 5px 10px;
+    border: 1px solid var(--neutral-600);
+    border-radius: var(--new-form-border-radius);
+}
+.new_contact_input:focus{
+    outline: none;
+    border: 2px solid var(--unread-msg);
+}
+/* Botones */
+.new_btns_container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    width: 100%;
+}
+.btn_new_form{
+    padding: 10px 15px;
+    background-color: var(--unread-msg);
+    border-radius: var(--new-form-border-radius);
+    color: var(--neutral-000);
+    font-weight: 600;
+}

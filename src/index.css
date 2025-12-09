@@ -6,6 +6,7 @@
   --neutral-100: #F7F5F3;
   --neutral-200: #F6F5F4;
 
+  --neutral-600: #3A3A3A;
   --neutral-900: #0A0A0A;
   --neutral-1000-alpha-06: #00000099;
 
@@ -16,6 +17,8 @@
 
   /* Medidas */
   --small-screens-size: 800px;
+
+  --new-form-border-radius: 5px
 }
 
 *{
