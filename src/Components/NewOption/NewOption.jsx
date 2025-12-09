@@ -1,13 +1,59 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import './NewOption.css'
+import { ContactListContext } from '../../Context/ContactListContext'
 
 function NewOption() {
+    const { contactList } = useContext(ContactListContext)
     const [isShown, setIsShown] = useState(false)
+    const [newName, setNewName] = useState('')
+    const [newPhone, setNewPhone] = useState('')
 
-    function displayForm(e) {
+    function displayForm(e, pressedButton) {
         /* Modifica el estado de isShown para mostrar/ocultar el formulario */
-        e.preventDefault()
+        if (pressedButton) {
+            e.preventDefault()
+        }
         setIsShown(!isShown)
+        /* Borra los valores de los campos */
+        setNewName('')
+        setNewPhone('')
+    }
+
+    function handleSubmit(e) {
+        /* Agrega la información a la base de datos */
+        e.preventDefault()
+
+        /* Verificar la información enviada */
+        if (!verifyName()) {
+            return
+        }
+        if (!verifyPhone()) {
+            return
+        }
+
+        /* Enviando la información a la 'base de datos' */
+        contactList.push({
+            contact_id: contactList.length + 1,
+            name: newName,
+            phone: newPhone,
+            unread_messages: 0,
+            messages: []
+        })
+        
+        /* Oculta el formulario */
+        displayForm(e)
+    }
+
+    function verifyName() {
+        if (!newName.trim()) {
+            return false
+        }
+        return true
+    }
+
+    function verifyPhone() {
+        /* TODO */
+        return true
     }
 
     return (
@@ -35,19 +81,42 @@ function NewOption() {
                             <i className="bi bi-person"></i>
                             Nombre Completo
                         </label>
-                        <input type="text" className="new_contact_input new_name_input" id='new_name_input' placeholder='Ingresa el nombre completo' autoFocus/>
+                        <input 
+                            type="text" 
+                            className="new_contact_input new_name_input" 
+                            id='new_name_input' 
+                            placeholder='Ingresa el nombre completo' 
+                            value={newName}
+                            onChange={(e) => setNewName(e.target.value)}
+                            />
                     </div>
                     <div className="new_contact_phone">
                         <label htmlFor="new_phone_input" className="new_contact_label new_phone_label">
                             <i className="bi bi-telephone"></i>
                             Teléfono
                         </label>
-                        <input type="text" className="new_contact_input new_phone_input" id='new_phone_input' placeholder='1112345678'/>
+                        <input 
+                            type="text" 
+                            className="new_contact_input new_phone_input" 
+                            id='new_phone_input' 
+                            placeholder='1112345678'
+                            value={newPhone}
+                            onChange={(e) => setNewPhone(e.target.value)}
+                            />
                     </div>
 
                     <div className="new_btns_container">
-                        <button className="btn_new_form btn_add_new_contact">Agregar</button>
-                        <button onClick={(e) => displayForm(e)} className="btn_new_form btn_cancel_add">Cancelar</button>
+                        <button 
+                        type='submit' 
+                        className="btn_new_form btn_add_new_contact"
+                        onClick={(e) => handleSubmit(e)}>
+                            Agregar
+                        </button>
+                        <button 
+                        onClick={(e) => displayForm(e, true)} 
+                        className="btn_new_form btn_cancel_add">
+                            Cancelar
+                        </button>
                     </div>
                 </form>
             </div>
