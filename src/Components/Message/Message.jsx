@@ -11,11 +11,6 @@ function Message(props) {
     const justifyMessage = message.isSentMessage ? "msg_horizontal_position own_message_justify" : "msg_horizontal_position"
     const backgroundColorMessage = message.isSentMessage ? "msg_flex own_message_bg_color" : "msg_flex"
 
-    const stateMessage = message.message_state === 'NOT_SEND' ? '<i class="bi bi-x-square"></i>' :
-                        message.message_state === 'SENT' ? '<i class="bi bi-check2"></i>' :
-                        message.message_state === 'NOT_READ' ? '<i className="bi bi-pencil"></i>' :
-                        message.message_state === 'READ' ? '<i className="bi bi-pencil msg-read"></i>' : ''
-
     function deleteMessage() {
         /* 
         Borra el mensaje seleccionado, eliminandolo de la lista de mensajes del contacto, y vuelve a renderizar los mensajes que quedan.
@@ -46,9 +41,9 @@ function Message(props) {
             <div className={backgroundColorMessage}>
                 {message.isSentMessage &&
                     <span className='chat_message_status'>
-                        {message.message_state === 'NOT_SENT' ? <i class="bi bi-x-square"></i> :
-                        message.message_state === 'SENT' ? <i class="bi bi-check2"></i> :
-                        message.message_state === 'NOT_READ' ? <i class="bi bi-check2-all"></i> :
+                        {message.message_state === 'NOT_SENT' ? <i className="bi bi-x-square"></i> :
+                        message.message_state === 'SENT' ? <i className="bi bi-check2"></i> :
+                        message.message_state === 'NOT_READ' ? <i className="bi bi-check2-all"></i> :
                         message.message_state === 'SEEN' ? <i className="bi bi-check2-all check_seen"></i> : ''}
                     </span>
                 }

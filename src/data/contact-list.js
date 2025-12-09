@@ -1,10 +1,4 @@
 /* 
-TODO:
-    - Por ahora, todos tienen el mismo avatar. Lo tengo que cambiar.
-    - Buscar una mejor manera de generar ids para los mensajes
-*/
-
-/* 
 Explicación de la lista
     name: nombre del contacto
     phone: teléfono
@@ -16,7 +10,7 @@ Explicación de la lista
         - isSentMessage: si yo envié el mensaje es true, si no es false
         - message_state: indica si el mensaje fue enviado (o no), recibido o leído
 */
-const concactList = [
+const concactListDataBase = [
     {
         contact_id: 1,
         name: 'Gandalf the Grey',
@@ -97,4 +91,4 @@ const concactList = [
     },
 ]
 
-export default concactList
+export default concactListDataBase

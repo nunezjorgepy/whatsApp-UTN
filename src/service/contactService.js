@@ -1,13 +1,13 @@
-import concactList from "../data/contact-list";
+import concactListDataBase from "../data/contact-list";
 
 export function getContactList(){
     /* En un futuro, esta función llama al servidor */
-    return concactList
+    return concactListDataBase
 }
 
 export function getContactById (contact_id) {
     /* Devuelve al contacto con la misma id que la solicitada */
-    for(const contact of concactList){
+    for(const contact of concactListDataBase){
         if (Number(contact.contact_id) === Number(contact_id)){
             return contact
         }
