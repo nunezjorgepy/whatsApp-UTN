@@ -22,7 +22,7 @@
 
 /* Formulario de nuevo contacto */
 .new_contact_container{
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -35,7 +35,7 @@
 }
 .new_contact_form{
     background-color: var(--neutral-000);
-    width: min(350px, 100%);
+    width: min(350px, 90%);
     padding: 25px;
     border-radius: var(--new-form-border-radius);
 }
@@ -73,4 +73,8 @@
     border-radius: var(--new-form-border-radius);
     color: var(--neutral-000);
     font-weight: 600;
+}
+
+.display_form_flex{
+    display: flex;
 }
