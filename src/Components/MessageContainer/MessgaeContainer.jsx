@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react'
 function MessgaeContainer() {
     const { id: id } = useParams()
     const [HTMLMessages, setHTMLMessages] = useState([])
+    const [willSendMessage, setWillSendMessage] = useState(true)
     const [messageToSent, setMessageToSent] = useState('')
     const contact = getContactById(id)
     
@@ -26,7 +27,8 @@ function MessgaeContainer() {
                     <Message 
                     key={message.message_id} 
                     message={message} 
-                    renderMessageComponent={renderMessageComponent} />
+                    renderMessageComponent={renderMessageComponent}
+                    toggleNewEditMessage={toggleNewEditMessage} />
                 )
             }
         )
@@ -49,6 +51,17 @@ function MessgaeContainer() {
         setMessageToSent('')
     }
 
+    function toggleNewEditMessage(){
+        /* Cambia el botón de enviar nuevo mensajes por el de editar mensaje, y la función correspondiente */
+        setWillSendMessage(!willSendMessage)
+    }
+
+    function editMessage(e) {
+        e.preventDefault()
+        console.log('Editing Message...')
+        toggleNewEditMessage()
+    }
+
     useEffect(
         () => {
             renderMessageComponent()
@@ -68,7 +81,9 @@ function MessgaeContainer() {
             </div>
 
             {/* Enviar Mensaje */}
-            <form className="send_message" onSubmit={(e) => sendNewMessage(e)}>
+            <form 
+                className="send_message" 
+                onSubmit={willSendMessage ? (e) => sendNewMessage(e) : (e) => editMessage(e)}>
                 <input 
                     type="text" name='write_message_input' 
                     id='write_message_input' 
@@ -76,9 +91,13 @@ function MessgaeContainer() {
                     placeholder='Escribe un mensaje'
                     value={messageToSent}
                     onChange={(e) => setMessageToSent(e.target.value)}/>
-                <button className="send_icon">
-                    <i className="bi bi-send"></i>
-                </button>
+                {willSendMessage ? 
+                    <button className="send_icon">
+                        <i className="bi bi-send"></i>
+                    </button> : 
+                    <button className="send_icon">
+                        <i className="bi bi-pen-fill"></i>
+                    </button>}
             </form>
         </section>
     )

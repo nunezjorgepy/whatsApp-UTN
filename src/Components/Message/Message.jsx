@@ -3,7 +3,7 @@ import './Message.css'
 import { getContactById } from '../../service/contactService'
 
 function Message(props) {
-    const { message, renderMessageComponent } = props
+    const { message, renderMessageComponent, toggleNewEditMessage } = props
     const { id: id } = useParams()
     const contact = getContactById(id)
 
@@ -63,7 +63,7 @@ function Message(props) {
                         La opción de reaccionar se muestra solamente en los mensajes recibidos
                     */}
                     {message.isSentMessage && 
-                    <button onClick={editMessage} className="msg_option edit_message">
+                    <button onClick={toggleNewEditMessage} className="msg_option edit_message">
                         <i className="bi bi-pencil"></i>
                     </button>
                     }
