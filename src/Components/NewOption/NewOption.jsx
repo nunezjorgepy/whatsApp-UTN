@@ -6,7 +6,10 @@ function NewOption() {
     const { contactList } = useContext(ContactListContext)
     const [isShown, setIsShown] = useState(false)
     const [newName, setNewName] = useState('')
+    const [isWrongName, setIsWrongName] = useState(false)
     const [newPhone, setNewPhone] = useState('')
+    const [isWrongPhone, setIsWrongPhone] = useState(false)
+
 
     function displayForm(e, pressedButton) {
         /* Modifica el estado de isShown para mostrar/ocultar el formulario */
@@ -17,6 +20,8 @@ function NewOption() {
         /* Borra los valores de los campos */
         setNewName('')
         setNewPhone('')
+        setIsWrongName(false)
+        setIsWrongPhone(false)
     }
 
     function handleSubmit(e) {
@@ -46,6 +51,7 @@ function NewOption() {
 
     function verifyName() {
         if (!newName.trim()) {
+            setIsWrongName(true)
             return false
         }
         return true
@@ -54,6 +60,7 @@ function NewOption() {
     function verifyPhone() {
         /* Podría verificar si el número arranca en 11 y que el tercer dígito no sea 0, pero lo dejo para otro momento */
         if (isNaN(newPhone) || newPhone.length !== 10) {
+            setIsWrongPhone(true)
             return false
         }
         return true
@@ -92,6 +99,7 @@ function NewOption() {
                             value={newName}
                             onChange={(e) => setNewName(e.target.value)}
                             />
+                        {isWrongName && <span className='invalid_field'>Nombre inválido</span>}
                     </div>
                     <div className="new_contact_phone">
                         <label htmlFor="new_phone_input" className="new_contact_label new_phone_label">
@@ -106,6 +114,7 @@ function NewOption() {
                             value={newPhone}
                             onChange={(e) => setNewPhone(e.target.value)}
                             />
+                        {isWrongPhone && <span className='invalid_field'>Teléfono inválido</span>}
                     </div>
 
                     <div className="new_btns_container">

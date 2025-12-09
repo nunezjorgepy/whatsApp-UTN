@@ -45,6 +45,11 @@
     gap: 10px;
     margin-bottom: 25px;
 }
+.invalid_field{
+    color: red;
+    font-size: 10px;
+    padding-left: 10px;
+}
 .new_contact_label{
     display: flex;
     gap: 5px;
