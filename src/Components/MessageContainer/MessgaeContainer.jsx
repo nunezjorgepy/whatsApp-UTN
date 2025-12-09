@@ -13,6 +13,10 @@ function MessgaeContainer() {
     const [messageToSent, setMessageToSent] = useState('')
     const contact = getContactById(id)
     
+    function unreadMessageToZero() {
+        /* Cuando entras en el chat, borra la cantidad de mensajes no leídos (si entraste, se supone que los leíste) */
+        contact.unread_messages = 0
+    }
 
     function renderMessageComponent(){
         /* Función para setear los Message Components que se mostrarán en el chat */
@@ -46,7 +50,10 @@ function MessgaeContainer() {
     }
 
     useEffect(
-        renderMessageComponent,
+        () => {
+            renderMessageComponent()
+            unreadMessageToZero()
+        },
         [contact]
     )
 
