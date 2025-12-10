@@ -1,7 +1,7 @@
 import Message from '../Message/Message'
 import ChatHeader from '../ChatHeader/ChatHeader'
 import './MessgaeContainer.css'
-import { getContactById } from "../../service/contactService"
+import { getContactById, getContactList } from "../../service/contactService"
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
@@ -12,6 +12,7 @@ function MessgaeContainer() {
     const [HTMLMessages, setHTMLMessages] = useState([])
     const [willSendMessage, setWillSendMessage] = useState(true)
     const [messageToSent, setMessageToSent] = useState('')
+    const [messageId, setMessageId] = useState(null)
     const contact = getContactById(id)
     
     function unreadMessageToZero() {
@@ -28,7 +29,9 @@ function MessgaeContainer() {
                     key={message.message_id} 
                     message={message} 
                     renderMessageComponent={renderMessageComponent}
-                    toggleNewEditMessage={toggleNewEditMessage} />
+                    toggleNewEditMessage={toggleNewEditMessage}
+                    setMessageToSent={setMessageToSent}
+                    setMessageId={setMessageId} />
                 )
             }
         )
@@ -58,7 +61,8 @@ function MessgaeContainer() {
 
     function editMessage(e) {
         e.preventDefault()
-        console.log('Editing Message...')
+        contact.messages[messageId].message = messageToSent
+        setMessageToSent('')
         toggleNewEditMessage()
     }
 
