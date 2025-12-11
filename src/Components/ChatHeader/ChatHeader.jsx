@@ -1,17 +1,24 @@
 import { Link } from 'react-router-dom'
 import './ChatHeader.css'
+import { useContext } from 'react';
+import { ContactDetailContext } from '../../Context/ContactDetailsContext';
 
 function ChatHeader(props) {
-    const { avatar, name } = props.contact;
+    /* const { avatar, name } = props.contact; */
+    const { contactSelected, isloadingContact } = useContext(ContactDetailContext)
+
+
 
     return (
         <div className="chat_header">
             <button className="show_contact_info">
                 <div className="img_container">
-                    <img className='chat_img' src={avatar} alt={"Foto de perfil de " + name} />
+                    <img 
+                    className='chat_img' src={!isloadingContact && contactSelected.avatar} 
+                    alt={"Foto de perfil de "}/>
                 </div>
                 <h2 className="chat_name">
-                    {name}
+                    {isloadingContact ? <div>Cragando información...</div> : contactSelected.name}
                 </h2>
             </button>
             <Link to="/" className="back_home">

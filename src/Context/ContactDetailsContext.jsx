@@ -27,7 +27,7 @@ const ContactDetailContextProvider = () => {
     )
 
 
-    providerValues ={
+    const providerValues ={
         contactSelected,
         isloadingContact,
         loadContactById
@@ -39,3 +39,5 @@ const ContactDetailContextProvider = () => {
         </ContactDetailContext.Provider>
     )
 }
+
+export default ContactDetailContextProvider
