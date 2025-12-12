@@ -5,6 +5,7 @@ import { getContactById, getContactList } from "../../service/contactService"
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import MessageTextarea from '../MessageTextarea/MessageTextarea'
+import MessagesContainer from '../MessagesContainer/MessagesContainer'
 
 
 
@@ -19,25 +20,6 @@ function MessgaeContainer() {
     function unreadMessageToZero() {
         /* Cuando entras en el chat, borra la cantidad de mensajes no leídos (si entraste, se supone que los leíste) */
         contact.unread_messages = 0
-    }
-
-    function renderMessageComponent(){
-        /* Función para setear los Message Components que se mostrarán en el chat */
-        const messages = contact.messages.map(
-            message => {
-                return(
-                    <Message 
-                    key={message.message_id} 
-                    message={message} 
-                    renderMessageComponent={renderMessageComponent}
-                    toggleNewEditMessage={toggleNewEditMessage}
-                    setMessageToSent={setMessageToSent}
-                    setMessageId={setMessageId} />
-                )
-            }
-        )
-        
-        setHTMLMessages(messages)
     }
 
     function sendNewMessage(e){
@@ -69,7 +51,6 @@ function MessgaeContainer() {
 
     useEffect(
         () => {
-            renderMessageComponent()
             unreadMessageToZero()
         },
         [contact]
@@ -78,12 +59,10 @@ function MessgaeContainer() {
     return (
         <section className='msg_container'>
             {/* Info del contacto */}
-            <ChatHeader contact={contact} />
+            <ChatHeader />
 
             {/* Mensajes */}
-            <div className="msgs_container">
-                {HTMLMessages}
-            </div>
+            <MessagesContainer />
 
             {/* Enviar Mensaje */}
             <MessageTextarea />
