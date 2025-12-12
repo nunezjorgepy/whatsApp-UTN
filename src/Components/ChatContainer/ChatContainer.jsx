@@ -1,6 +1,6 @@
 import Message from '../Message/Message'
 import ChatHeader from '../ChatHeader/ChatHeader'
-import './MessgaeContainer.css'
+import './ChatContainer.css'
 import { getContactById, getContactList } from "../../service/contactService"
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
