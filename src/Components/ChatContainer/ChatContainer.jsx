@@ -4,6 +4,7 @@ import './ChatContainer.css'
 import { getContactById, getContactList } from "../../service/contactService"
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import MessageTextarea from '../MessageTextarea/MessageTextarea'
 
 
 
@@ -85,24 +86,7 @@ function MessgaeContainer() {
             </div>
 
             {/* Enviar Mensaje */}
-            <form 
-                className="send_message" 
-                onSubmit={willSendMessage ? (e) => sendNewMessage(e) : (e) => editMessage(e)}>
-                <input 
-                    type="text" name='write_message_input' 
-                    id='write_message_input' 
-                    className="send_message_input" 
-                    placeholder='Escribe un mensaje'
-                    value={messageToSent}
-                    onChange={(e) => setMessageToSent(e.target.value)}/>
-                {willSendMessage ? 
-                    <button className="send_icon">
-                        <i className="bi bi-send"></i>
-                    </button> : 
-                    <button className="send_icon">
-                        <i className="bi bi-pen-fill"></i>
-                    </button>}
-            </form>
+            <MessageTextarea />
         </section>
     )
 }
