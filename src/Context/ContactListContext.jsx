@@ -7,25 +7,22 @@ export const ContactListContext = createContext()
 
 const ContactListContextProvider = () => {
     const [contactList, setContactList] = useState([])
-    /* const [HTMLContactList, setHTMLContactList] = useState([]) */
+    const [isloadingContacts, setIsLoadingContacts] = useState(true)
 
     function loadContactList() {
-        /* Busca la lista de contactos en la 'base de datos' */
-        const contact_list = getContactList();
+        setIsLoadingContacts(true)
+        setTimeout(
+            function() {
+                /* Busca la lista de contactos en la 'base de datos' */
+                const contact_list = getContactList();
+                // Guardo la respuesta en mi estado
+                setContactList(contact_list);
 
-        // Guardo la respuesta en mi estado
-        setContactList(contact_list);
+                setIsLoadingContacts(false)
+            },
+            2000
+        )
     }
-
-    const HTMLContactList = contactList.map(
-        (contact) => {
-            return (
-                <Link to={`/chat/` + contact.contact_id + '/messages'} key={contact.contact_id}>
-                    <Contact contact={contact} />
-                </Link>
-            )
-        }
-    )
 
     useEffect(
         loadContactList,
@@ -34,7 +31,7 @@ const ContactListContextProvider = () => {
 
     const providerValues = {
         contactList,
-        HTMLContactList
+        isloadingContacts
     }
 
     return (

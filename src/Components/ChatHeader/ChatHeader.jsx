@@ -8,15 +8,12 @@ function ChatHeader(props) {
     const { contactSelected, isloadingContact } = useContext(ContactDetailContext)
 
 
-
-
-
     return (
         <div className="chat_header">
             <button className="show_contact_info">
                 <div className="img_container">
                     <img 
-                    className='chat_img' src={!isloadingContact && contactSelected.avatar} 
+                    className='chat_img' src={!isloadingContact ? contactSelected.avatar : '../'} 
                     alt={"Foto de perfil"}/>
                 </div>
                 <h2 className="chat_name">
