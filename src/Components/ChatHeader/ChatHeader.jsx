@@ -7,17 +7,27 @@ function ChatHeader(props) {
     /* const { avatar, name } = props.contact; */
     const { contactSelected, isloadingContact } = useContext(ContactDetailContext)
 
+    if (isloadingContact) {
+        return(
+            <div className="chat_header">
+                <div className="show_contact_info">
+                    <div className="img_container"></div>
+                    <h2 className="chat_name">Cargando información del contacto...</h2>
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div className="chat_header">
             <button className="show_contact_info">
                 <div className="img_container">
                     <img 
-                    className='chat_img' src={!isloadingContact ? contactSelected.avatar : '../'} 
+                    className='chat_img' src={contactSelected.avatar} 
                     alt={"Foto de perfil"}/>
                 </div>
                 <h2 className="chat_name">
-                    {isloadingContact ? <div>Cragando información...</div> : contactSelected.name}
+                    {contactSelected.name}
                 </h2>
             </button>
             <Link to="/" className="back_home">

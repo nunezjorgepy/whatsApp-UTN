@@ -23,7 +23,7 @@ const ContactDetailContextProvider = () => {
 
     useEffect(
         loadContactById,
-        []
+        [id]
     )
 
 
