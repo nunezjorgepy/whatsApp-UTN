@@ -1,6 +1,7 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { Outlet, useParams } from "react-router-dom";
-import { getContactById } from "../service/contactService";
+import { getContactById, getContactList } from "../service/contactService";
+import { ContactListContext } from "./ContactListContext";
 
 export const ContactDetailContext = createContext()
 
@@ -8,6 +9,8 @@ const ContactDetailContextProvider = () => {
     const { id: id } = useParams()
     const [contactSelected, setContactSelected] = useState(null)
     const [isloadingContact, setIsLoadingContact] = useState(true)
+
+
 
     function loadContactById() {
         setIsLoadingContact(true)
@@ -21,6 +24,21 @@ const ContactDetailContextProvider = () => {
         )
     }
 
+    function addNewMessages(content) {
+        const new_message = {
+            message_id: contactSelected.messages.length + 1,
+            message: content,
+            message_at: new Date(),
+            isSentMessage: true,
+            message_state: 'NOT_SENT',
+        }
+
+        setContactSelected({
+            ...contactSelected,
+            messages: [...contactSelected.messages, new_message]
+        })
+    }
+
     useEffect(
         loadContactById,
         [id]
@@ -30,7 +48,8 @@ const ContactDetailContextProvider = () => {
     const providerValues ={
         contactSelected,
         isloadingContact,
-        loadContactById
+        loadContactById,
+        addNewMessages,
     }
 
     return(

@@ -1,14 +1,22 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import './MessageTextarea.css'
+import { ContactDetailContext } from '../../Context/ContactDetailsContext'
 
 function MessageTextarea() {
+    const { addNewMessages } = useContext(ContactDetailContext)
     const [messageToSent, setMessageToSent] = useState('')
     const [willSendMessage, setWillSendMessage] = useState(true)
+
+    function handleSubmit(e) {
+        e.preventDefault()
+        addNewMessages(messageToSent)
+        setMessageToSent('')
+    }
 
     return (
         <form 
             className="send_message" 
-            onSubmit={willSendMessage ? (e) => sendNewMessage(e) : (e) => editMessage(e)}>
+            onSubmit={(e) => handleSubmit(e)}>
             <textarea 
                 type="text" name='write_message_input' 
                 id='write_message_input' 

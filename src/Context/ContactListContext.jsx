@@ -31,6 +31,7 @@ const ContactListContextProvider = () => {
 
     const providerValues = {
         contactList,
+        setContactList,
         isloadingContacts
     }
 

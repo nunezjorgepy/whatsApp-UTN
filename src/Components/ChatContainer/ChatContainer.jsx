@@ -22,21 +22,6 @@ function MessgaeContainer() {
         contact.unread_messages = 0
     }
 
-    function sendNewMessage(e){
-        e.preventDefault()
-
-        contact.messages.push({
-            message_id: contact.messages[contact.messages.length - 1].message_id + 1,
-            message: messageToSent,
-            message_at: new Date(),
-            isSentMessage: true,
-            message_state: `NOT_SENT`
-        })
-
-        renderMessageComponent()
-        setMessageToSent('')
-    }
-
     function toggleNewEditMessage(){
         /* Cambia el botón de enviar nuevo mensajes por el de editar mensaje, y la función correspondiente */
         setWillSendMessage(!willSendMessage)

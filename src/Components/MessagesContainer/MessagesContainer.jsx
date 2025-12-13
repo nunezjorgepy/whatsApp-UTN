@@ -6,7 +6,6 @@ import Message from '../Message/Message'
 
 function MessgaesContainer() {
     const { contactSelected, isloadingContact } = useContext(ContactDetailContext)
-    console.log(contactSelected)
     if (isloadingContact) {
         return (
             <div className="msgs_container">Cargando mensajes...</div>
