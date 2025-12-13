@@ -19,7 +19,7 @@ const concactListDataBase = [
         unread_messages: 1,
         messages: [
             {
-                message_id: 1001,
+                message_id: 1,
                 message: `YOU SHALL NOT PASS`,
                 message_at: new Date("November 29, 2025 17:12:12"),
                 isSentMessage: false,
@@ -35,14 +35,14 @@ const concactListDataBase = [
         unread_messages: 0,
         messages: [
             {
-                message_id: 2001,
+                message_id: 1,
                 message: `Our business is our own`,
                 message_at: new Date(),
                 isSentMessage: false,
                 message_state: null
             },
             {
-                message_id: 2002,
+                message_id: 2,
                 message: `Destruya el anillo, Señor Frodo!!`,
                 message_at: new Date("November 28, 2025 05:23:12"),
                 isSentMessage: true,
@@ -58,7 +58,7 @@ const concactListDataBase = [
         unread_messages: 0,
         messages: [
             {
-                message_id: 3001,
+                message_id: 1,
                 message: `Tendrías que haber traído más flechas!`,
                 message_at: new Date("December 1, 2025 03:02:12"),
                 isSentMessage: true,
@@ -74,14 +74,14 @@ const concactListDataBase = [
         unread_messages: 2,
         messages: [
             {
-                message_id: 4001,
+                message_id: 1,
                 message: `Puedo ser invisible si quiero`,
                 message_at: new Date("November 30, 2025 12:27:00"),
                 isSentMessage: false,
                 message_state: `SEEN`
             },
             {
-                message_id: 4002,
+                message_id: 2,
                 message: `Pero desaparecer completamente`,
                 message_at: new Date("November 30, 2025 12:27:00"),
                 isSentMessage: false,
