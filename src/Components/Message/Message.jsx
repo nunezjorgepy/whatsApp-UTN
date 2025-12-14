@@ -1,10 +1,13 @@
 import { useParams } from 'react-router-dom'
 import './Message.css'
 import { getContactById } from '../../service/contactService'
+import { useContext } from 'react'
+import { MessageContext } from '../../Context/MessageContext'
 
 function Message(props) {
     const { message, renderMessageComponent, toggleNewEditMessage, setMessageToSent, setMessageId } = props
     const { id: id } = useParams()
+    const { showDelteWarning, setShowDelteWarning } = useContext(MessageContext)
     const contact = getContactById(id)
 
     /* Dependiendo del tipo de mensaje, muestra una u otra cosa. */
@@ -78,7 +81,7 @@ function Message(props) {
                         <i className="bi bi-pencil"></i>
                     </button>
                     }
-                    <button onClick={deleteMessage} className="msg_option delete_message">
+                    <button onClick={() => setShowDelteWarning(!showDelteWarning)} className="msg_option delete_message">
                         <i className="bi bi-trash3"></i>
                     </button>
                     {!message.isSentMessage &&

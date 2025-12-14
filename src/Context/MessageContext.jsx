@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 export const MessageContext = createContext()
 
 const MessageContextProvider = () => {
-    const [showDelteWarning, setShowDelteWarning] = useState(null)
+    const [showDelteWarning, setShowDelteWarning] = useState(true)
 
     const providerValues = {
         showDelteWarning,

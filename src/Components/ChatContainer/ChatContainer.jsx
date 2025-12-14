@@ -3,14 +3,17 @@ import ChatHeader from '../ChatHeader/ChatHeader'
 import './ChatContainer.css'
 import { getContactById, getContactList } from "../../service/contactService"
 import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import MessageTextarea from '../MessageTextarea/MessageTextarea'
 import MessagesContainer from '../MessagesContainer/MessagesContainer'
+import { MessageContext } from '../../Context/MessageContext'
+import DeleteWarning from '../DeleteWarning/DeleteWarning'
 
 
 
 function MessgaeContainer() {
     const { id: id } = useParams()
+    const { showDelteWarning } = useContext(MessageContext)
     const [willSendMessage, setWillSendMessage] = useState(true)
     const [messageToSent, setMessageToSent] = useState('')
     const [messageId, setMessageId] = useState(null)
@@ -50,6 +53,8 @@ function MessgaeContainer() {
 
             {/* Enviar Mensaje */}
             <MessageTextarea />
+
+            {showDelteWarning && <DeleteWarning />}
         </section>
     )
 }
