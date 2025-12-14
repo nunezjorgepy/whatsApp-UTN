@@ -13,7 +13,8 @@ import DeleteWarning from '../DeleteWarning/DeleteWarning'
 
 function MessgaeContainer() {
     const { id: id } = useParams()
-    const { showDelteWarning } = useContext(MessageContext)
+    const { showDeleteWarning } = useContext(MessageContext)
+    const { setShowDeleteWarning } = useContext(MessageContext)
     const [willSendMessage, setWillSendMessage] = useState(true)
     const [messageToSent, setMessageToSent] = useState('')
     const [messageId, setMessageId] = useState(null)
@@ -39,6 +40,7 @@ function MessgaeContainer() {
     useEffect(
         () => {
             unreadMessageToZero()
+            setShowDeleteWarning(false)
         },
         [contact]
     )
@@ -54,7 +56,7 @@ function MessgaeContainer() {
             {/* Enviar Mensaje */}
             <MessageTextarea />
 
-            {showDelteWarning && <DeleteWarning />}
+            {showDeleteWarning && <DeleteWarning />}
         </section>
     )
 }
