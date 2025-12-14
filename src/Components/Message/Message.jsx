@@ -8,9 +8,7 @@ function Message(props) {
     const { 
         showDeleteWarning, 
         setShowDeleteWarning,
-        showEditComponent,
         setShowEditComponent,
-        messageId, 
         setMessageId,
         setMessageToEdit,
         findMessageIndex 
