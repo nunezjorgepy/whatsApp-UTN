@@ -9,7 +9,9 @@ function Message(props) {
     const { message, toggleNewEditMessage, setMessageToSent } = props
     const { 
         showDeleteWarning, 
-        setShowDeleteWarning, 
+        setShowDeleteWarning,
+        showEditComponent,
+        setShowEditComponent,
         messageId, 
         setMessageId, 
         findMessageIndex 
@@ -46,14 +48,7 @@ function Message(props) {
     }
 
     function handleEditButton(){
-        /* Busca el mensaje */
-        const messageId = findMessageId()
-        const messageToEdit = contact.messages[messageId].message
-        setMessageToSent(messageToEdit)
-        setMessageId(messageId)
-        console.log(messageToEdit)
-
-        toggleNewEditMessage()
+        setShowEditComponent(!showDeleteWarning)
     }
 
 

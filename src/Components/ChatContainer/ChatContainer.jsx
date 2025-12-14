@@ -46,6 +46,7 @@ function MessgaeContainer() {
         () => {
             unreadMessageToZero()
             setShowDeleteWarning(false)
+            setShowEditComponent(false)
         },
         [contact]
     )

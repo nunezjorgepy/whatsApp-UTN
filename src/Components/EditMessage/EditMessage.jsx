@@ -1,6 +1,16 @@
+import { useContext } from 'react'
 import './EditMessage.css'
+import { MessageContext } from '../../Context/MessageContext'
 
 function EditMessage() {
+    const { showEditComponent, setShowEditComponent } = useContext(MessageContext)
+
+    function handleCancelClick(e){
+        e.preventDefault()
+
+        setShowEditComponent(!showEditComponent)
+    }
+
     return (
         <form className='messages_popup_form'>
             <div className="messages_popup_container edit_container">
@@ -15,7 +25,7 @@ function EditMessage() {
                     <button className="messages_popup_btn">
                         Aceptar
                     </button>
-                    <button className="messages_popup_btn messages_popup_no_btn">
+                    <button onClick={(e) => handleCancelClick(e)} className="messages_popup_btn messages_popup_no_btn">
                         Cancelar
                     </button>
                 </div>
