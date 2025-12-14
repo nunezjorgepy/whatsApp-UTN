@@ -41,6 +41,8 @@ function Message(props) {
         /* Encuentra el index del mensaje a eliminar */
         const foundMessage = findMessageIndex(contactSelected, message)
 
+        setMessageId(foundMessage)
+
         setMessageToEdit(contactSelected.messages[foundMessage].message)
     }
 

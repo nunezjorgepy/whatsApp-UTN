@@ -43,6 +43,10 @@ const ContactDetailContextProvider = () => {
         contactSelected.messages.splice(messageIndex, 1)
     }
 
+    function editMessage(messageIndex, text){
+        contactSelected.messages[messageIndex].message = text
+    }
+
     useEffect(
         loadContactById,
         [id]
@@ -55,6 +59,7 @@ const ContactDetailContextProvider = () => {
         loadContactById,
         addNewMessages,
         deleteMessage,
+        editMessage,
     }
 
     return(

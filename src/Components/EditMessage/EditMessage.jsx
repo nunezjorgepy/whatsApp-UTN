@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import './EditMessage.css'
 import { MessageContext } from '../../Context/MessageContext'
+import { ContactDetailContext } from '../../Context/ContactDetailsContext'
 
 function EditMessage() {
     const { 
@@ -8,7 +9,17 @@ function EditMessage() {
         setShowEditComponent,
         messageToEdit,
         setMessageToEdit,
+        messageId,
     } = useContext(MessageContext)
+    const { editMessage } = useContext(ContactDetailContext)
+
+    function handleAceptButton(e) {
+        e.preventDefault()
+
+        editMessage(messageId, messageToEdit)
+        
+        setShowEditComponent(!showEditComponent)
+    }
 
     function handleCancelClick(e){
         e.preventDefault()
@@ -30,7 +41,7 @@ function EditMessage() {
 
                 </textarea>
                 <div className="messages_popup_btns_container">
-                    <button className="messages_popup_btn">
+                    <button onClick={(e) => handleAceptButton(e)} className="messages_popup_btn">
                         Aceptar
                     </button>
                     <button onClick={(e) => handleCancelClick(e)} className="messages_popup_btn messages_popup_no_btn">
