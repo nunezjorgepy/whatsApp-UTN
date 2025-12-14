@@ -1,12 +1,10 @@
-import { useParams } from 'react-router-dom'
 import './Message.css'
-import { getContactById } from '../../service/contactService'
 import { useContext } from 'react'
 import { MessageContext } from '../../Context/MessageContext'
 import { ContactDetailContext } from '../../Context/ContactDetailsContext'
 
 function Message(props) {
-    const { message, toggleNewEditMessage, setMessageToSent } = props
+    const { message } = props
     const { 
         showDeleteWarning, 
         setShowDeleteWarning,
@@ -17,15 +15,14 @@ function Message(props) {
         findMessageIndex 
     } = useContext(MessageContext)
     const { contactSelected } = useContext(ContactDetailContext)
-    
-    const { id: id } = useParams()
-    const contact = getContactById(id)
 
     /* Dependiendo del tipo de mensaje, muestra una u otra cosa. */
     const justifyMessage = message.isSentMessage ? "msg_horizontal_position own_message_justify" : "msg_horizontal_position"
     const backgroundColorMessage = message.isSentMessage ? "msg_flex own_message_bg_color" : "msg_flex"
 
-
+    /* TODO:
+        Unificar las funciones handle, que hacen casi lo mismo.
+    */
     function handleDeleteButton() {
         /* Muestra el cuadro de advertencia */
         setShowDeleteWarning(!showDeleteWarning)
@@ -37,18 +34,14 @@ function Message(props) {
         setMessageId(foundMessage)
     }
 
-    function findMessageId(){
-        /* Encuentra el mensaje según la id del mensaje */
-        /* TODO: finish funciton */
-        const foundMessage = contact.messages.findIndex(
-            (msg) => msg.message_id === message.message_id
-        )
-        
-        return foundMessage
-    }
-
     function handleEditButton(){
         setShowEditComponent(!showDeleteWarning)
+        
+        /* Encuentra el index del mensaje a eliminar */
+        const foundMessage = findMessageIndex(contactSelected, message)
+        
+        /* Setea el index del mensaje a eliminar */
+        setMessageId(foundMessage)
     }
 
 
