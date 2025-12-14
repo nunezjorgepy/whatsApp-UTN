@@ -5,6 +5,7 @@ export const MessageContext = createContext()
 
 const MessageContextProvider = () => {
     const [showDeleteWarning, setShowDeleteWarning] = useState(false)
+    const [showEditComponent, setShowEditComponent] = useState(true)
     /* 
     TODO: modificar el nombre de messaId a messageIndex (y el setter) porque es más adecuado.
     Hacerlo después de haber eliminado los messageId del intento antreior.
@@ -24,6 +25,8 @@ const MessageContextProvider = () => {
     const providerValues = {
         showDeleteWarning,
         setShowDeleteWarning,
+        showEditComponent,
+        setShowEditComponent,
         messageId,
         setMessageId,
         findMessageIndex

@@ -1,5 +1,4 @@
 import { useContext } from 'react'
-import './DeleteWarning.css'
 import { MessageContext } from '../../Context/MessageContext'
 import { ContactDetailContext } from '../../Context/ContactDetailsContext'
 
@@ -16,14 +15,14 @@ function DeleteWarning() {
     }
 
     return (
-        <form className="delete_warning_form">
-            <div className="delete_container">
+        <form className="messages_popup_form">
+            <div className="messages_popup_container">
                 <span className="delete_span">¿Estas seguro de eliminar el mensaje?</span>
-                <div className="delete_btns_container">
-                    <button onClick={(e) => handleDeleteSubmit(e)} className="delete_btn delete_yes_btn">
+                <div className="messages_popup_btns_container">
+                    <button onClick={(e) => handleDeleteSubmit(e)} className="messages_popup_btn messages_popup_yes_btn">
                         Si
                     </button>
-                    <button onClick={() => setShowDeleteWarning(!showDeleteWarning)} className="delete_btn delete_no_btn">
+                    <button onClick={() => setShowDeleteWarning(!showDeleteWarning)} className="messages_popup_btn messages_popup_no_btn">
                         No
                     </button>
                 </div>

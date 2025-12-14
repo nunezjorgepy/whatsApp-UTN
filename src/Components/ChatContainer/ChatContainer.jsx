@@ -8,13 +8,18 @@ import MessageTextarea from '../MessageTextarea/MessageTextarea'
 import MessagesContainer from '../MessagesContainer/MessagesContainer'
 import { MessageContext } from '../../Context/MessageContext'
 import DeleteWarning from '../DeleteWarning/DeleteWarning'
+import EditMessage from '../EditMessage/EditMessage'
 
 
 
 function MessgaeContainer() {
     const { id: id } = useParams()
-    const { showDeleteWarning } = useContext(MessageContext)
-    const { setShowDeleteWarning } = useContext(MessageContext)
+    const { 
+        showDeleteWarning, 
+        setShowDeleteWarning, 
+        showEditComponent, 
+        setShowEditComponent
+    } = useContext(MessageContext)
     const [willSendMessage, setWillSendMessage] = useState(true)
     const [messageToSent, setMessageToSent] = useState('')
     const [messageId, setMessageId] = useState(null)
@@ -56,7 +61,10 @@ function MessgaeContainer() {
             {/* Enviar Mensaje */}
             <MessageTextarea />
 
+            {/* Advertencia de eliminar mensaje */}
             {showDeleteWarning && <DeleteWarning />}
+            {/* Cuadro para Editar Mensaje */}
+            {showEditComponent && <EditMessage />}
         </section>
     )
 }
