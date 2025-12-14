@@ -13,19 +13,17 @@ function EditMessage() {
     } = useContext(MessageContext)
     const { editMessage } = useContext(ContactDetailContext)
 
-    function handleAceptButton(e) {
+    function handleButtonPress(e, isSend) {
         e.preventDefault()
 
-        editMessage(messageId, messageToEdit)
-        
+        /* Si presioné en el botón Acpetar, envía el mensaje */
+        if (isSend) {
+            editMessage(messageId, messageToEdit)
+        }
+
         setShowEditComponent(!showEditComponent)
     }
 
-    function handleCancelClick(e){
-        e.preventDefault()
-
-        setShowEditComponent(!showEditComponent)
-    }
 
     return (
         <form className='messages_popup_form'>
@@ -41,10 +39,10 @@ function EditMessage() {
 
                 </textarea>
                 <div className="messages_popup_btns_container">
-                    <button onClick={(e) => handleAceptButton(e)} className="messages_popup_btn">
+                    <button onClick={(e) => handleButtonPress(e, true)} className="messages_popup_btn">
                         Aceptar
                     </button>
-                    <button onClick={(e) => handleCancelClick(e)} className="messages_popup_btn messages_popup_no_btn">
+                    <button onClick={(e) => handleButtonPress(e)} className="messages_popup_btn messages_popup_no_btn">
                         Cancelar
                     </button>
                 </div>
