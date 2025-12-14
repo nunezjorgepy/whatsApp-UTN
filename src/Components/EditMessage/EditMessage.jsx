@@ -3,7 +3,12 @@ import './EditMessage.css'
 import { MessageContext } from '../../Context/MessageContext'
 
 function EditMessage() {
-    const { showEditComponent, setShowEditComponent } = useContext(MessageContext)
+    const { 
+        showEditComponent, 
+        setShowEditComponent,
+        messageToEdit,
+        setMessageToEdit,
+    } = useContext(MessageContext)
 
     function handleCancelClick(e){
         e.preventDefault()
@@ -18,7 +23,10 @@ function EditMessage() {
                 <textarea 
                     name="edit_textarea" 
                     id="edit_textarea" 
-                    className='edit_textarea'>
+                    className='edit_textarea'
+                    value={messageToEdit}
+                    onChange={(e) => setMessageToEdit(e.target.value)}
+                    >
 
                 </textarea>
                 <div className="messages_popup_btns_container">

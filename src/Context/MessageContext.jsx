@@ -11,6 +11,7 @@ const MessageContextProvider = () => {
     Hacerlo después de haber eliminado los messageId del intento antreior.
     */
     const [messageId, setMessageId] = useState(null)
+    const [messageToEdit, setMessageToEdit] = useState('')
 
     function findMessageIndex(contact, message){
         /* Encuentra el índice del mensaje buscado */
@@ -29,6 +30,8 @@ const MessageContextProvider = () => {
         setShowEditComponent,
         messageId,
         setMessageId,
+        messageToEdit,
+        setMessageToEdit,
         findMessageIndex
     }
 
