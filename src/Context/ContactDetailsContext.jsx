@@ -1,7 +1,6 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { Outlet, useParams } from "react-router-dom";
-import { getContactById, getContactList } from "../service/contactService";
-import { ContactListContext } from "./ContactListContext";
+import { getContactById } from "../service/contactService";
 
 export const ContactDetailContext = createContext()
 
@@ -39,6 +38,11 @@ const ContactDetailContextProvider = () => {
         })
     }
 
+    function deleteMessage(messageIndex){
+        /* Elimina el mensaje de la lista del contacto seleccionado (contactSelected) */
+        contactSelected.messages.splice(messageIndex, 1)
+    }
+
     useEffect(
         loadContactById,
         [id]
@@ -50,6 +54,7 @@ const ContactDetailContextProvider = () => {
         isloadingContact,
         loadContactById,
         addNewMessages,
+        deleteMessage,
     }
 
     return(

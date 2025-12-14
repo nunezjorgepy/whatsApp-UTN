@@ -6,7 +6,7 @@ import { MessageContext } from '../../Context/MessageContext'
 import { ContactDetailContext } from '../../Context/ContactDetailsContext'
 
 function Message(props) {
-    const { message, renderMessageComponent, toggleNewEditMessage, setMessageToSent } = props
+    const { message, toggleNewEditMessage, setMessageToSent } = props
     const { 
         showDeleteWarning, 
         setShowDeleteWarning, 
@@ -23,30 +23,16 @@ function Message(props) {
     const justifyMessage = message.isSentMessage ? "msg_horizontal_position own_message_justify" : "msg_horizontal_position"
     const backgroundColorMessage = message.isSentMessage ? "msg_flex own_message_bg_color" : "msg_flex"
 
-    function deleteMessage() {
-        /* 
-        Borra el mensaje seleccionado, eliminandolo de la lista de mensajes del contacto, y vuelve a renderizar los mensajes que quedan.
-        */
-        contact.messages.splice(findMessageId(), 1)
-        renderMessageComponent()
-    }
-
-    function editMessage() {
-        /* Edita el mensaje seleccionado */
-        /* TODO: finish funciton */
-        const messageIndex = findMessageId()
-    }
-
-
 
     function handleDeleteButton() {
+        /* Muestra el cuadro de advertencia */
         setShowDeleteWarning(!showDeleteWarning)
+
+        /* Encuentra el index del mensaje a eliminar */
         const foundMessage = findMessageIndex(contactSelected, message)
 
-        console.log(foundMessage)
-
+        /* Setea el index del mensaje a eliminar */
         setMessageId(foundMessage)
-        console.log(messageId)
     }
 
     function findMessageId(){

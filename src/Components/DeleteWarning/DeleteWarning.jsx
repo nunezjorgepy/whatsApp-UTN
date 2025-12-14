@@ -1,14 +1,18 @@
 import { useContext } from 'react'
 import './DeleteWarning.css'
 import { MessageContext } from '../../Context/MessageContext'
+import { ContactDetailContext } from '../../Context/ContactDetailsContext'
 
 function DeleteWarning() {
     const { showDeleteWarning, setShowDeleteWarning, messageId } = useContext(MessageContext)
+    const { deleteMessage } = useContext(ContactDetailContext)
 
     function handleDeleteSubmit(e){
         e.preventDefault()
-
-        console.log(messageId)
+        
+        deleteMessage(messageId)
+        setShowDeleteWarning(!showDeleteWarning)
+        
     }
 
     return (

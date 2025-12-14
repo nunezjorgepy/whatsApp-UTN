@@ -5,6 +5,10 @@ export const MessageContext = createContext()
 
 const MessageContextProvider = () => {
     const [showDeleteWarning, setShowDeleteWarning] = useState(false)
+    /* 
+    TODO: modificar el nombre de messaId a messageIndex (y el setter) porque es más adecuado.
+    Hacerlo después de haber eliminado los messageId del intento antreior.
+    */
     const [messageId, setMessageId] = useState(null)
 
     function findMessageIndex(contact, message){
