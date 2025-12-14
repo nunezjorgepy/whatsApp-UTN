@@ -6,11 +6,13 @@ import Message from '../Message/Message'
 
 function MessgaesContainer() {
     const { contactSelected, isloadingContact } = useContext(ContactDetailContext)
+    
     if (isloadingContact) {
         return (
             <div className="msgs_container">Cargando mensajes...</div>
         )
     }
+    
     const HTMLMessages = contactSelected.messages.map(
         message => {
             return(

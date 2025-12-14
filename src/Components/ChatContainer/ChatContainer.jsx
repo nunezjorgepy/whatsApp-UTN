@@ -11,7 +11,6 @@ import MessagesContainer from '../MessagesContainer/MessagesContainer'
 
 function MessgaeContainer() {
     const { id: id } = useParams()
-    const [HTMLMessages, setHTMLMessages] = useState([])
     const [willSendMessage, setWillSendMessage] = useState(true)
     const [messageToSent, setMessageToSent] = useState('')
     const [messageId, setMessageId] = useState(null)
