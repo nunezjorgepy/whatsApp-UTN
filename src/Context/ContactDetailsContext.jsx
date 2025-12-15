@@ -22,6 +22,9 @@ const ContactDetailContextProvider = () => {
     }
 
     function addNewMessages(content) {
+        /* 
+        La idea del message_id es que use siempre el id del último mensaje. Si uso 'contacSelected.messages.lenght + 1' y se llegara a borrar un mensaje anterior (NO el útlimo), al agregar uno nuevo tomaría como id la longitud de la lista y repetiría id
+        */
         const new_message = {
             message_id: contactSelected.messages[contactSelected.messages.length - 1].message_id + 1,
             message: content,
