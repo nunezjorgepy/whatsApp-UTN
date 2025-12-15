@@ -9,8 +9,6 @@ const ContactDetailContextProvider = () => {
     const [contactSelected, setContactSelected] = useState(null)
     const [isloadingContact, setIsLoadingContact] = useState(true)
 
-
-
     function loadContactById() {
         setIsLoadingContact(true)
         setTimeout(
@@ -25,7 +23,7 @@ const ContactDetailContextProvider = () => {
 
     function addNewMessages(content) {
         const new_message = {
-            message_id: contactSelected.messages.length + 1,
+            message_id: contactSelected.messages[contactSelected.messages.length - 1].message_id + 1,
             message: content,
             message_at: new Date(),
             isSentMessage: true,
