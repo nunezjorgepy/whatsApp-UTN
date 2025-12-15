@@ -41,6 +41,7 @@ function NewOption() {
             contact_id: contactList.length + 1,
             name: newName,
             phone: newPhone,
+            avatar: 'https://static.vecteezy.com/system/resources/previews/051/498/301/large_2x/social-media-chat-online-blank-profile-picture-head-and-body-icon-people-standing-icon-free-vector.jpg',
             unread_messages: 0,
             messages: []
         })
