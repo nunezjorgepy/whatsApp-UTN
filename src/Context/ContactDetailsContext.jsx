@@ -1,6 +1,6 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { Outlet, useParams } from "react-router-dom";
-import { getContactById } from "../service/contactService";
+import { ContactListContext } from "./ContactListContext";
 
 export const ContactDetailContext = createContext()
 
@@ -8,6 +8,7 @@ const ContactDetailContextProvider = () => {
     const { id: id } = useParams()
     const [contactSelected, setContactSelected] = useState(null)
     const [isloadingContact, setIsLoadingContact] = useState(true)
+    const { getContactById } = useContext(ContactListContext)
 
     function loadContactById() {
         setIsLoadingContact(true)

@@ -1,7 +1,6 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import Contact from "../Components/Contact/Contact";
+import { createContext, useEffect, useState } from "react";
 import { getContactList } from "../service/contactService";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 export const ContactListContext = createContext()
 
@@ -24,6 +23,14 @@ const ContactListContextProvider = () => {
         )
     }
 
+    function getContactById(contact_id) {
+        for(const contact of contactList){
+            if (Number(contact.contact_id) === Number(contact_id)){
+                return contact
+            }
+        }
+    }
+
     useEffect(
         loadContactList,
         []
@@ -32,7 +39,8 @@ const ContactListContextProvider = () => {
     const providerValues = {
         contactList,
         setContactList,
-        isloadingContacts
+        isloadingContacts,
+        getContactById
     }
 
     return (
