@@ -50,6 +50,9 @@
     margin-right: auto;
 }
 
+.chat_message_status{
+    font-size: 11px;
+}
 .contact_last_msg_at, .conact_last_msg{
     font-size: 12px;
     color: var(--neutral-1000-alpha-06);

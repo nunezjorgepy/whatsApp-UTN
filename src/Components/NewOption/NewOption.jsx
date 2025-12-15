@@ -1,9 +1,10 @@
 import { useContext, useState } from 'react'
 import './NewOption.css'
 import { ContactListContext } from '../../Context/ContactListContext'
+import concactListDataBase from '../../data/contact-list'
 
 function NewOption() {
-    const { contactList } = useContext(ContactListContext)
+    const { contactList, setContactList } = useContext(ContactListContext)
     const [isShown, setIsShown] = useState(false)
     const [newName, setNewName] = useState('')
     const [isWrongName, setIsWrongName] = useState(false)
@@ -36,15 +37,25 @@ function NewOption() {
             return
         }
 
-        /* Enviando la información a la 'base de datos' */
-        contactList.push({
+        /* Creando el nuevo contacto */
+        const new_contact = {
             contact_id: contactList.length + 1,
             name: newName,
             phone: newPhone,
             avatar: 'https://static.vecteezy.com/system/resources/previews/051/498/301/large_2x/social-media-chat-online-blank-profile-picture-head-and-body-icon-people-standing-icon-free-vector.jpg',
             unread_messages: 0,
             messages: []
-        })
+        }
+        /* Enviando la información a la 'base de datos' */
+        setContactList([
+            ...contactList,
+            new_contact
+        ])
+        /* 
+        Hago el push a la 'base de datos' para evitar que no reconozca el nuevo contacto al entrar en el chat.
+        TODO: el profe propone otra soluciona un poco más profesional. Intentar de esa forma
+        */
+        concactListDataBase.push(new_contact)
         
         /* Oculta el formulario */
         displayForm(e)

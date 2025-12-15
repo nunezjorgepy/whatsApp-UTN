@@ -1,6 +1,8 @@
-import { useContext } from 'react'
 import './MessagesContainer.css'
+import { useContext } from 'react'
+/* Contextos */
 import { ContactDetailContext } from '../../Context/ContactDetailsContext'
+/* Componentes */
 import Message from '../Message/Message'
 
 
