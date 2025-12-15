@@ -1,5 +1,5 @@
-import { useContext, useState } from 'react'
 import './NewOption.css'
+import { useContext, useState } from 'react'
 import { ContactListContext } from '../../Context/ContactListContext'
 import concactListDataBase from '../../data/contact-list'
 
@@ -88,10 +88,6 @@ function NewOption() {
                 <div className="new_options">
                     <button onClick={displayForm} className="new_option new_contact">
                         <i className="bi bi-person-plus"></i>
-                    </button>
-
-                    <button className="new_option new_chat">
-                        <i className="bi bi-chat-left"></i>
                     </button>
                 </div>
             </div>

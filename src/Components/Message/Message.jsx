@@ -76,11 +76,6 @@ function Message(props) {
                     <button onClick={handleDeleteButton} className="msg_option delete_message">
                         <i className="bi bi-trash3"></i>
                     </button>
-                    {!message.isSentMessage &&
-                    <button className="msg_option react_message">
-                        <i className="bi bi-emoji-smile"></i>
-                    </button>
-                    }
                 </div>
             </div>
 
