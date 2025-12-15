@@ -1,6 +1,5 @@
 import ChatHeader from '../ChatHeader/ChatHeader'
 import './ChatContainer.css'
-import { useParams } from 'react-router-dom'
 import { useContext, useEffect } from 'react'
 /* Componentes */
 import MessageTextarea from '../MessageTextarea/MessageTextarea'

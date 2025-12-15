@@ -1,11 +1,12 @@
 import './ContactContainer.css'
+import { Link } from 'react-router-dom'
 /* Components */
 import NewOption from '../NewOption/NewOption.jsx'
 import SearchBar from '../SearchBar/SearchBar.jsx'
+import Contact from '../Contact/Contact.jsx'
+/* Contextos */
 import { useContext } from 'react'
 import { ContactListContext } from '../../Context/ContactListContext.jsx'
-import Contact from '../Contact/Contact.jsx'
-import { Link } from 'react-router-dom'
 
 
 function ContactContainer() {

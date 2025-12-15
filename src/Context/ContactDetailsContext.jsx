@@ -8,7 +8,7 @@ const ContactDetailContextProvider = () => {
     const { id: id } = useParams()
     const [contactSelected, setContactSelected] = useState(null)
     const [isloadingContact, setIsLoadingContact] = useState(true)
-    const { getContactById } = useContext(ContactListContext)
+    const { getContactById, updateContactById } = useContext(ContactListContext)
 
     function loadContactById() {
         setIsLoadingContact(true)
@@ -34,10 +34,13 @@ const ContactDetailContextProvider = () => {
             message_state: 'NOT_SENT',
         }
 
-        setContactSelected({
-            ...contactSelected,
-            messages: [...contactSelected.messages, new_message]
-        })
+        /* Clonamos el contacto seleccionado */
+        const contactSelectedCloned = { ...contactSelected }
+
+        /* Agregamos el nuevo mensaje a la lista del contacto clonado */
+        contactSelectedCloned.messages.push(new_message)
+
+        updateContactById(contactSelectedCloned, id)
     }
 
     function deleteMessage(messageIndex){

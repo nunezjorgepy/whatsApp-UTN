@@ -24,11 +24,27 @@ const ContactListContextProvider = () => {
     }
 
     function getContactById(contact_id) {
+        
         for(const contact of contactList){
             if (Number(contact.contact_id) === Number(contact_id)){
                 return contact
             }
         }
+    }
+
+        
+    function updateContactById(contact_to_update, contact_id){
+        //Creamos una nueva lista donde el contacto a actualizar se reemplazara por el contacto actualizado
+        const new_contact_list = contactList.map(
+            (contact) => {
+                if (Number(contact.contact_id) === Number(contact_id)) {
+                    return contact_to_update
+                }
+                return contact
+            }
+        )
+
+        setContactList(new_contact_list)
     }
 
     useEffect(
@@ -40,7 +56,8 @@ const ContactListContextProvider = () => {
         contactList,
         setContactList,
         isloadingContacts,
-        getContactById
+        getContactById,
+        updateContactById
     }
 
     return (
