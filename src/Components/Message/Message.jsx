@@ -15,10 +15,6 @@ function Message(props) {
     } = useContext(MessageContext)
     const { contactSelected } = useContext(ContactDetailContext)
 
-    /* Dependiendo del tipo de mensaje, muestra una u otra cosa. */
-    const justifyMessage = message.isSentMessage ? "msg_horizontal_position own_message_justify" : "msg_horizontal_position"
-    const backgroundColorMessage = message.isSentMessage ? "msg_flex own_message_bg_color" : "msg_flex"
-
     /* TODO:
         Unificar las funciones handle, que hacen casi lo mismo.
     */
@@ -33,6 +29,7 @@ function Message(props) {
         setMessageId(foundMessage)
     }
 
+    /* Función para el botón de editar */
     function handleEditButton(){
         setShowEditComponent(!showDeleteWarning)
         
@@ -46,8 +43,8 @@ function Message(props) {
 
 
     return (
-        <div className={justifyMessage}>
-            <div className={backgroundColorMessage}>
+        <div className={"msg_horizontal_position " + (message.isSentMessage ? "own_message_justify" : "msg_horizontal_position")}>
+            <div className={message.isSentMessage ? "msg_flex own_message_bg_color" : "msg_flex"}>
                 {message.isSentMessage &&
                     <span className='chat_message_status'>
                         {message.message_state === 'NOT_SENT' ? <i className="bi bi-x-square"></i> :
