@@ -21,6 +21,7 @@
 .img_container{
     width: 50px;
     height: 50px;
+    flex-shrink: 0;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -48,6 +49,10 @@
 }
 .conact_last_msg{
     margin-right: auto;
+    text-wrap: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    width: 220px;
 }
 
 .chat_message_status{
@@ -77,4 +82,16 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
+}
+
+@media screen and (max-width: 800px) {
+    .conact_last_msg{
+        width: 70dvw;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .conact_last_msg{
+        width: 50dvw;
+    }
 }

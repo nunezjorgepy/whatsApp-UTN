@@ -48,6 +48,13 @@ const concactListDataBase = [
                 isSentMessage: true,
                 message_state: `SENT`
             },
+            {
+                message_id: 3,
+                message: `Este es un mensaje muy largo para hacer la prueba de cómo queda en la barra de contactos de la parte izquierda.`,
+                message_at: new Date("November 28, 2025 05:23:59"),
+                isSentMessage: true,
+                message_state: `SENT`
+            },
         ]
     },
     {
