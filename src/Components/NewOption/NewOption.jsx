@@ -1,7 +1,6 @@
 import './NewOption.css'
 import { useContext, useState } from 'react'
 import { ContactListContext } from '../../Context/ContactListContext'
-import concactListDataBase from '../../data/contact-list'
 
 function NewOption() {
     const { contactList, addNewContact } = useContext(ContactListContext)

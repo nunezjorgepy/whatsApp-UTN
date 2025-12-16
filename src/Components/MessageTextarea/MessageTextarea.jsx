@@ -8,6 +8,10 @@ function MessageTextarea() {
 
     function handleSubmit(e) {
         e.preventDefault()
+        /* Me aseguro que no sea un mensaje vacío o que contenga sólo espacios. */
+        if (!messageToSent.trim()) {
+            return
+        }
         addNewMessages(messageToSent)
         setMessageToSent('')
     }
