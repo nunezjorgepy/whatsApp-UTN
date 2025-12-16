@@ -11,7 +11,7 @@ function ChatHeader() {
             <div className="chat_header">
                 <div className="show_contact_info">
                     <div className="img_container"></div>
-                    <h2 className="chat_name">Cargando información del contacto...</h2>
+                    <h2 className="chat_name loading_info">Cargando información del contacto...</h2>
                 </div>
             </div>
         )

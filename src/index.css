@@ -47,7 +47,7 @@ button{
 }
 
 /* Clase genérica (se usa en varios componentes) */
-.nothing_to_show{
+.nothing_to_show, .loading_info{
   /* Usada cuando no hay chat abierto o mensajes para mostrar */
   display: flex;
   align-items: center;
@@ -56,6 +56,9 @@ button{
   font-size: 2rem;
   color: var(--unread-msg);
   text-shadow: 1px 1px 1px gray;
+}
+.loading_info{
+  font-size: 16px;
 }
 
 @media screen and (max-width: 800px) {

@@ -11,7 +11,7 @@ function MessgaesContainer() {
     
     if (isloadingContact) {
         return (
-            <div className="msgs_container">Cargando mensajes...</div>
+            <div className="msgs_container loading_info">Cargando mensajes...</div>
         )
     }
     

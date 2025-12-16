@@ -47,7 +47,7 @@ function ContactContainer() {
             <NewOption />
             <SearchBar />
             {isloadingContacts ? 
-            <div>Cargando Contactos...</div> :
+            <div className='loading_info'>Cargando Contactos...</div> :
             HTMLContactList
             /* !listFilter ? HTMLContactList :
             HTMLFilterContactList */}
