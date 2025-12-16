@@ -1,16 +1,11 @@
-# React + Vite
+# Elección del desafío
+Intentaré crear una versión simplificada de Whatsapp, en la que se puedan enviar, editar y eliminar mensajes, además de agregar y buscar contactos. 
+Los estilos serán lo más parecidos a los que se ven en https://web.whatsapp.com/.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Tecnologías usadas
+La principal herramienta usada es React, los estilos se hacen puramente con css
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Desafíos
+Diría que el armado del 'html' y los estilos no fueron de gran dificultad. El responsivo tuvo lo suyo en cuanto a la barra de contactos, y tuve que hacer una transformación rara para el botón de envío de mensajes así parece centrado (esta explicado en el css de MessageTextares.css), pero no creo que haya sido tan problemático.
+La gran mayoría de las funciones tuvieron su nivel de dificultad, pero lo más complejo fue cuando tuve que agregar los context. La gran mayoría de las funciones que ya tenía creadas dejaban de funcionar correctamente al usar el context. Me costó, pero lo pude solucionar.
+Otro gran problema que tenía era que no se renderizaba automáticamente los mensajes o los contactos cuando modificaba o agregaba algo. Según lo visto en clase, terminé haciendo que el detalle del contacto viniera desde el estado creado en ContactListContext en vez de venir directamente de la lsita que hace de 'base de datos' (/data/contact-list).
