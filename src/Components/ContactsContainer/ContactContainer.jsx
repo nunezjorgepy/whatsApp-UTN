@@ -32,13 +32,25 @@ function ContactContainer() {
         }
     )
 
+    /* const HTMLFilterContactList = HTMLContactList.filter(
+        (contact) => {
+            const name = contact.props.children.props.contact.name.toLowerCase()
+            const lowerFilter = listFilter.toLowerCase()
+            if (name.includes(lowerFilter)) {
+                return contact
+            }
+        }
+    ) */
+
     return (
         <aside className='contact_container'>
             <NewOption />
             <SearchBar />
             {isloadingContacts ? 
             <div>Cargando Contactos...</div> :
-            HTMLContactList}
+            HTMLContactList
+            /* !listFilter ? HTMLContactList :
+            HTMLFilterContactList */}
         </aside>
     )
 }

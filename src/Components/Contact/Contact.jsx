@@ -14,7 +14,7 @@ function Contact(props) {
     }
 
     return (
-        <div href='https://www.google.com.ar' className='contact_width'>
+        <div className='contact_width'>
             <div className="contact_flex">
                 {/* Imagen de Perfil */}
                 <div className="img_container">
