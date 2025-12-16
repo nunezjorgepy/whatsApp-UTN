@@ -47,3 +47,19 @@ button{
 }
 
 /* Clase genérica (se usa en varios componentes) */
+.nothing_to_show{
+  /* Usada cuando no hay chat abierto o mensajes para mostrar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  font-size: 2rem;
+  color: var(--unread-msg);
+  text-shadow: 1px 1px 1px gray;
+}
+
+@media screen and (max-width: 800px) {
+    .nothing_to_show{
+        display: none;
+    }
+}

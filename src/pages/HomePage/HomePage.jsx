@@ -1,11 +1,10 @@
-import './HomePage.css'
 import ContactContainer from '../../Components/ContactsContainer/ContactContainer'
 
 function HomePage() {
     return (
         <main>
             <ContactContainer />
-            <section className="no_chat_opened">No hay chats abiertos</section>
+            <section className="nothing_to_show">No hay chats abiertos</section>
         </main>
     )
 }

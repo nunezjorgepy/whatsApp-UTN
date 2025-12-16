@@ -4,10 +4,11 @@
     padding: 15px;
     margin-left: 40px;
     width: max(30%, 400px);
-    min-height: 100dvh;
+    height: 100dvh;
     border-left: 1px solid rgba(0,0,0, .1);
     border-right: 1px solid rgba(0,0,0, .1);
     background-color: var(--neutral-000);
+    overflow-y: scroll;
 }
 
 @media screen and (max-width: 800px) {

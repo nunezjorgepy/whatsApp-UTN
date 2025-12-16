@@ -24,6 +24,12 @@ function MessgaesContainer() {
             )
         }
     )
+
+    if (HTMLMessages.length === 0) {
+        return(
+            <div className='nothing_to_show'>No hay mensajes para mostrar</div>
+        )
+    }
     
     return (
         <div className='msgs_container'>
