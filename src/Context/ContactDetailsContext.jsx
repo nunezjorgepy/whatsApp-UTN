@@ -45,7 +45,10 @@ const ContactDetailContextProvider = () => {
 
     function deleteMessage(messageIndex){
         /* Elimina el mensaje de la lista del contacto seleccionado (contactSelected) */
-        contactSelected.messages.splice(messageIndex, 1)
+        const contactSelectedCloned = { ...contactSelected }
+        contactSelectedCloned.messages.splice(messageIndex, 1)
+
+        updateContactById(contactSelectedCloned, id)
     }
 
     function editMessage(messageIndex, text){
