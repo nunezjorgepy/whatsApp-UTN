@@ -24,7 +24,7 @@ function ChatHeader(props) {
                 <div className="img_container">
                     <img 
                     className='chat_img' src={contactSelected.avatar} 
-                    alt={"Foto de perfil"}/>
+                    alt={"Foto de perfil de " + contactSelected.name}/>
                 </div>
                 <h2 className="chat_name">
                     {contactSelected.name}
