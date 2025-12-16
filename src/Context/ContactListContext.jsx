@@ -7,6 +7,7 @@ export const ContactListContext = createContext()
 const ContactListContextProvider = () => {
     const [contactList, setContactList] = useState([])
     const [isloadingContacts, setIsLoadingContacts] = useState(true)
+    const [listFilter, setListFilter] = useState('')
 
     function loadContactList() {
         setIsLoadingContacts(true)
@@ -65,7 +66,9 @@ const ContactListContextProvider = () => {
         isloadingContacts,
         getContactById,
         updateContactById,
-        addNewContact
+        addNewContact,
+        listFilter, 
+        setListFilter,
     }
 
     return (

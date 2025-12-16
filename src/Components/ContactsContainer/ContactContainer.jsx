@@ -10,7 +10,7 @@ import { ContactListContext } from '../../Context/ContactListContext.jsx'
 
 
 function ContactContainer() {
-    const { contactList, isloadingContacts } = useContext(ContactListContext)
+    const { contactList, isloadingContacts, listFilter } = useContext(ContactListContext)
 
     const HTMLContactList = contactList.map(
         (contact) => {
@@ -19,6 +19,16 @@ function ContactContainer() {
                     <Contact contact={contact} />
                 </Link>
             )
+        }
+    ).filter(
+        /* Filtro los contactos. Si filter es una cedena vacía, devuelve la lisa completa. */
+        (contact) => {
+            // Paso a minúscula el filtro y el nombre en la lista, para evitar que no encuentre 'Jorge' si busco 'jorge'
+            const name = contact.props.children.props.contact.name.toLowerCase()
+            const lowerFilter = listFilter.toLowerCase()
+            if (name.includes(lowerFilter)) {
+                return contact
+            }
         }
     )
 
