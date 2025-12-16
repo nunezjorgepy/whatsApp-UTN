@@ -52,7 +52,11 @@ const ContactDetailContextProvider = () => {
     }
 
     function editMessage(messageIndex, text){
-        contactSelected.messages[messageIndex].message = text
+        /* Edita el mensaje seleccionado */
+        const contactSelectedCloned = { ...contactSelected }
+        contactSelectedCloned.messages[messageIndex].message = text
+
+        updateContactById(contactSelectedCloned, id)
     }
 
     useEffect(
