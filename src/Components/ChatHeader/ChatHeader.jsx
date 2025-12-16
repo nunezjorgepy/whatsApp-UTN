@@ -3,8 +3,7 @@ import './ChatHeader.css'
 import { useContext } from 'react';
 import { ContactDetailContext } from '../../Context/ContactDetailsContext';
 
-function ChatHeader(props) {
-    /* const { avatar, name } = props.contact; */
+function ChatHeader() {
     const { contactSelected, isloadingContact } = useContext(ContactDetailContext)
 
     if (isloadingContact) {
