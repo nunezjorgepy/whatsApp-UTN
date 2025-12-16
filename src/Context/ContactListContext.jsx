@@ -47,6 +47,13 @@ const ContactListContextProvider = () => {
         setContactList(new_contact_list)
     }
 
+    function addNewContact(new_contact){
+        const new_contact_list = [ ...contactList ]
+        new_contact_list.push(new_contact)
+
+        setContactList(new_contact_list)
+    }
+
     useEffect(
         loadContactList,
         []
@@ -57,7 +64,8 @@ const ContactListContextProvider = () => {
         setContactList,
         isloadingContacts,
         getContactById,
-        updateContactById
+        updateContactById,
+        addNewContact
     }
 
     return (

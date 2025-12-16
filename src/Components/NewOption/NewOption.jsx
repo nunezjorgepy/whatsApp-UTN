@@ -4,7 +4,7 @@ import { ContactListContext } from '../../Context/ContactListContext'
 import concactListDataBase from '../../data/contact-list'
 
 function NewOption() {
-    const { contactList, setContactList } = useContext(ContactListContext)
+    const { contactList, addNewContact } = useContext(ContactListContext)
     const [isShown, setIsShown] = useState(false)
     const [newName, setNewName] = useState('')
     const [isWrongName, setIsWrongName] = useState(false)
@@ -26,14 +26,13 @@ function NewOption() {
     }
 
     function handleSubmit(e) {
-        /* Agrega la información a la base de datos */
+        /*
+            Organiza lo que sucede al hacer click en el botón 'Agregar' del formula de nuevo contacto
+        */
         e.preventDefault()
 
         /* Verificar la información enviada */
-        if (!verifyName()) {
-            return
-        }
-        if (!verifyPhone()) {
+        if (!verifyName() || !verifyPhone()) {
             return
         }
 
@@ -47,16 +46,8 @@ function NewOption() {
             messages: []
         }
         /* Enviando la información a la 'base de datos' */
-        setContactList([
-            ...contactList,
-            new_contact
-        ])
-        /* 
-        Hago el push a la 'base de datos' para evitar que no reconozca el nuevo contacto al entrar en el chat.
-        TODO: el profe propone otra soluciona un poco más profesional. Intentar de esa forma
-        */
-        concactListDataBase.push(new_contact)
-        
+        addNewContact(new_contact)
+
         /* Oculta el formulario */
         displayForm(e)
     }
