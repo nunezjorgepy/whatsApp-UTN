@@ -15,16 +15,11 @@ function Message(props) {
     } = useContext(MessageContext)
     const { contactSelected } = useContext(ContactDetailContext)
 
-    /* TODO:
-        Unificar las funciones handle, que hacen casi lo mismo.
-    */
     function handleDeleteButton() {
         /* Muestra el cuadro de advertencia */
         setShowDeleteWarning(!showDeleteWarning)
-
         /* Encuentra el index del mensaje a eliminar */
         const foundMessage = findMessageIndex(contactSelected, message)
-
         /* Setea el index del mensaje a eliminar */
         setMessageId(foundMessage)
     }
@@ -32,12 +27,9 @@ function Message(props) {
     /* Función para el botón de editar */
     function handleEditButton(){
         setShowEditComponent(!showDeleteWarning)
-        
         /* Encuentra el index del mensaje a eliminar */
         const foundMessage = findMessageIndex(contactSelected, message)
-
         setMessageId(foundMessage)
-
         setMessageToEdit(contactSelected.messages[foundMessage].message)
     }
 
