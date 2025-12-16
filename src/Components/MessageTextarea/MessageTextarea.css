@@ -12,7 +12,11 @@
 }
 .send_message_input{
     flex: 1;
+    display: flex;
+    align-items: center;
     border: none;
+    resize: none;
+    height: 1rem;
 }
 .send_message_input:focus{
     outline: none;
@@ -25,6 +29,12 @@
     padding: 5px;
     border-radius: 50%;
 }
-.send_icon i{
+.send_message_btn{
     color: var(--neutral-000);
+    transform: translate(-1px, 1.5px);
+    /* 
+    Sin la transformación, el ícono queda centrado, pero al tener una forma rara, pareciera que esta ligeramente alto y a la derecha. Se puede ver si descomenta el borde que se encuentra abajo y comenta la transformación. 
+    Con esta transformación, parece centrado y no se rompe para ningpun ancho. 
+    */
+    /* border: 1px solid red; */
 }

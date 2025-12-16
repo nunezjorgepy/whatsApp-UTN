@@ -5,7 +5,6 @@ import { ContactDetailContext } from '../../Context/ContactDetailsContext'
 function MessageTextarea() {
     const { addNewMessages } = useContext(ContactDetailContext)
     const [messageToSent, setMessageToSent] = useState('')
-    const [willSendMessage, setWillSendMessage] = useState(true)
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -17,20 +16,16 @@ function MessageTextarea() {
         <form 
             className="send_message" 
             onSubmit={(e) => handleSubmit(e)}>
-            <textarea 
-                type="text" name='write_message_input' 
-                id='write_message_input' 
-                className="send_message_input" 
-                placeholder='Escribe un mensaje'
-                value={messageToSent}
-                onChange={(e) => setMessageToSent(e.target.value)}/>
-            {willSendMessage ? 
+                <textarea 
+                    type="text" name='write_message_input' 
+                    id='write_message_input' 
+                    className="send_message_input" 
+                    placeholder='Escribe un mensaje'
+                    value={messageToSent}
+                    onChange={(e) => setMessageToSent(e.target.value)}/>
                 <button className="send_icon">
-                    <i className="bi bi-send"></i>
-                </button> : 
-                <button className="send_icon">
-                    <i className="bi bi-pen-fill"></i>
-                </button>}
+                    <i className="bi bi-send send_message_btn"></i>
+                </button> 
         </form>
     )
 }
