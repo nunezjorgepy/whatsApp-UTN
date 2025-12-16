@@ -9,7 +9,7 @@ function Message(props) {
         showDeleteWarning, 
         setShowDeleteWarning,
         setShowEditComponent,
-        setMessageId,
+        setmessageIndex,
         setMessageToEdit,
         findMessageIndex 
     } = useContext(MessageContext)
@@ -21,7 +21,7 @@ function Message(props) {
         /* Encuentra el index del mensaje a eliminar */
         const foundMessage = findMessageIndex(contactSelected, message)
         /* Setea el index del mensaje a eliminar */
-        setMessageId(foundMessage)
+        setmessageIndex(foundMessage)
     }
 
     /* Función para el botón de editar */
@@ -29,7 +29,7 @@ function Message(props) {
         setShowEditComponent(!showDeleteWarning)
         /* Encuentra el index del mensaje a eliminar */
         const foundMessage = findMessageIndex(contactSelected, message)
-        setMessageId(foundMessage)
+        setmessageIndex(foundMessage)
         setMessageToEdit(contactSelected.messages[foundMessage].message)
     }
 

@@ -9,7 +9,7 @@ function EditMessage() {
         setShowEditComponent,
         messageToEdit,
         setMessageToEdit,
-        messageId,
+        messageIndex,
     } = useContext(MessageContext)
     const { editMessage } = useContext(ContactDetailContext)
 
@@ -18,7 +18,7 @@ function EditMessage() {
 
         /* Si presioné en el botón Acpetar, envía el mensaje */
         if (isSend) {
-            editMessage(messageId, messageToEdit)
+            editMessage(messageIndex, messageToEdit)
         }
 
         setShowEditComponent(!showEditComponent)

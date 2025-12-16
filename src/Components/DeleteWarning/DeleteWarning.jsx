@@ -3,13 +3,13 @@ import { MessageContext } from '../../Context/MessageContext'
 import { ContactDetailContext } from '../../Context/ContactDetailsContext'
 
 function DeleteWarning() {
-    const { showDeleteWarning, setShowDeleteWarning, messageId } = useContext(MessageContext)
+    const { showDeleteWarning, setShowDeleteWarning, messageIndex } = useContext(MessageContext)
     const { deleteMessage } = useContext(ContactDetailContext)
 
     function handleDeleteSubmit(e){
         e.preventDefault()
         
-        deleteMessage(messageId)
+        deleteMessage(messageIndex)
         setShowDeleteWarning(!showDeleteWarning)
         
     }
