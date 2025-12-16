@@ -20,10 +20,24 @@ function ContactContainer() {
                 </Link>
             )
         }
-    ).filter(
-        /* Filtro los contactos. Si filter es una cedena vacía, devuelve la lisa completa. */
+    ).sort(
+        (a, b) => {
+            /* Ordeno la lista según el más reciente */
+            // Obtengo la lista de mensajes de cada contacto.
+            const messageA = a.props.children.props.contact.messages
+            const messageB = b.props.children.props.contact.messages
+
+            return (
+                messageB[messageB.length - 1].message_at - messageA[messageA.length - 1].message_at
+            )
+        }
+    )
+    
+
+    const HTMLFilterContactList = HTMLContactList.filter(
+        /* Filtra la lista de contactos según el término buscado, pero sólo la renderiza si hay un término buscado */
         (contact) => {
-            // Paso a minúscula el filtro y el nombre en la lista, para evitar que no encuentre 'Jorge' si busco 'jorge'
+            /* toLowerCase() asegura que si busco jorge, lo encuentre aunque el contacto sea Jorge, JoRgE o JORGE */
             const name = contact.props.children.props.contact.name.toLowerCase()
             const lowerFilter = listFilter.toLowerCase()
             if (name.includes(lowerFilter)) {
@@ -32,25 +46,14 @@ function ContactContainer() {
         }
     )
 
-    /* const HTMLFilterContactList = HTMLContactList.filter(
-        (contact) => {
-            const name = contact.props.children.props.contact.name.toLowerCase()
-            const lowerFilter = listFilter.toLowerCase()
-            if (name.includes(lowerFilter)) {
-                return contact
-            }
-        }
-    ) */
-
     return (
         <aside className='contact_container'>
             <NewOption />
             <SearchBar />
             {isloadingContacts ? 
             <div className='loading_info'>Cargando Contactos...</div> :
-            HTMLContactList
-            /* !listFilter ? HTMLContactList :
-            HTMLFilterContactList */}
+            !listFilter ? HTMLContactList :
+            HTMLFilterContactList}
         </aside>
     )
 }
