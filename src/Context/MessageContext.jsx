@@ -5,7 +5,7 @@ export const MessageContext = createContext()
 
 const MessageContextProvider = () => {
     const [showDeleteWarning, setShowDeleteWarning] = useState(false)
-    const [showEditComponent, setShowEditComponent] = useState(true)
+    const [showEditComponent, setShowEditComponent] = useState(false)
     const [messageIndex, setmessageIndex] = useState(null)
     const [messageToEdit, setMessageToEdit] = useState('')
 
@@ -18,12 +18,6 @@ const MessageContextProvider = () => {
         return foundMessage
     }
 
-    function unreadMessageToZero(contactSelected) {
-        /* Cuando entras en el chat, borra la cantidad de mensajes no leídos (si entraste, se supone que los leíste) */
-        if (contactSelected){
-            contactSelected.unread_messages = 0
-        }
-    }
 
     const providerValues = {
         showDeleteWarning,
@@ -35,7 +29,6 @@ const MessageContextProvider = () => {
         messageToEdit,
         setMessageToEdit,
         findMessageIndex,
-        unreadMessageToZero
     }
 
     return(

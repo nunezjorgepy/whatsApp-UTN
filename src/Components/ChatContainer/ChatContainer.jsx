@@ -15,13 +15,21 @@ import { ContactDetailContext } from '../../Context/ContactDetailsContext'
 function MessgaeContainer() {
     const { 
         showDeleteWarning, 
-        showEditComponent,
+        setShowDeleteWarning, 
+        showEditComponent, 
+        setShowEditComponent,
     } = useContext(MessageContext)
-    const { unreadMessagesToZero } = useContext(ContactDetailContext)
+    const { contactSelected, unreadMessagesToZero } = useContext(ContactDetailContext)
 
     unreadMessagesToZero()
 
-
+    useEffect(
+        () => {
+            setShowDeleteWarning(false)
+            setShowEditComponent(false)
+        },
+        [contactSelected]
+    )
 
     return (
         <section className='msg_container'>
