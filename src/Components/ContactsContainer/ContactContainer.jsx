@@ -27,8 +27,12 @@ function ContactContainer() {
             const messageA = a.props.children.props.contact.messages
             const messageB = b.props.children.props.contact.messages
 
+            /* Cuando agrego un nuevo contacto o elimino todos los mensajes, no puede leer la propiedad message_at ya que no existe. Por eso, le asigno el valor 0, que lo deja último en la lista */
+            const messageADate = messageA.length !== 0 ? messageA[messageA.length - 1].message_at : 0
+            const messageBDate = messageB.length !== 0 ? messageB[messageB.length - 1].message_at : 0
+
             return (
-                messageB[messageB.length - 1].message_at - messageA[messageA.length - 1].message_at
+                messageBDate - messageADate
             )
         }
     )
