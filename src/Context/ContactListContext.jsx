@@ -72,6 +72,24 @@ const ContactListContextProvider = () => {
         setContactList(new_contact_list)
     }
 
+
+    function verifyTextInput(textInput){
+        /* Verifica que el texto ingresado no sea una cadena vacía o sólo espacios */
+        if (!textInput.trim()){
+            return false
+        }
+        return true
+    }
+
+
+    function verifyPhone(phone) {
+        /* Verifica que el número de teléfono ingresado sea correcto */
+        if (isNaN(phone) || phone.length !== 10) {
+            return false
+        }
+        return true
+    }
+
     useEffect(
         loadContactList,
         []
@@ -85,6 +103,8 @@ const ContactListContextProvider = () => {
         getContactById,
         updateContactById,
         addNewContact,
+        verifyTextInput,
+        verifyPhone,
         listFilter, 
         setListFilter,
     }

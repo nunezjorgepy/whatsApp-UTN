@@ -3,7 +3,7 @@ import { useContext, useState } from 'react'
 import { ContactListContext } from '../../Context/ContactListContext'
 
 function NewOption() {
-    const { contactList, addNewContact } = useContext(ContactListContext)
+    const { contactList, addNewContact, verifyTextInput, verifyPhone } = useContext(ContactListContext)
     const [isShown, setIsShown] = useState(false)
     const [newName, setNewName] = useState('')
     const [isWrongName, setIsWrongName] = useState(false)
@@ -31,7 +31,14 @@ function NewOption() {
         e.preventDefault()
 
         /* Verificar la información enviada */
-        if (!verifyName() || !verifyPhone()) {
+        if (!verifyTextInput(newName)){
+            /* Si el nombre es incorrecto, muestra el mensaje por pantalla y no permite continuar */
+            setIsWrongName(true)
+            return
+        }
+        if (!verifyPhone()) {
+            /* Si el teléfono es incorrecto, muestra el mensaje por pantalla y no permite continuar */
+            setIsWrongPhone(true)
             return
         }
 
@@ -51,22 +58,6 @@ function NewOption() {
         displayForm(e)
     }
 
-    function verifyName() {
-        if (!newName.trim()) {
-            setIsWrongName(true)
-            return false
-        }
-        return true
-    }
-
-    function verifyPhone() {
-        /* Podría verificar si el número arranca en 11 y que el tercer dígito no sea 0, pero lo dejo para otro momento */
-        if (isNaN(newPhone) || newPhone.length !== 10) {
-            setIsWrongPhone(true)
-            return false
-        }
-        return true
-    }
 
     return (
         <div className='new_container'>
