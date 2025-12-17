@@ -18,6 +18,12 @@ const MessageContextProvider = () => {
         return foundMessage
     }
 
+    function unreadMessageToZero(contactSelected) {
+        /* Cuando entras en el chat, borra la cantidad de mensajes no leídos (si entraste, se supone que los leíste) */
+        if (contactSelected){
+            contactSelected.unread_messages = 0
+        }
+    }
 
     const providerValues = {
         showDeleteWarning,
@@ -29,6 +35,7 @@ const MessageContextProvider = () => {
         messageToEdit,
         setMessageToEdit,
         findMessageIndex,
+        unreadMessageToZero
     }
 
     return(

@@ -51,21 +51,12 @@ const ContactDetailContextProvider = () => {
         updateContactById(contactSelectedCloned, id)
     }
 
-    function unreadMessagesToZero(){
-        /* Setea la cantidad de mensajes no leidos a 0 */
-        const contactSelectedCloned = { ...contactSelected }
-        contactSelectedCloned.unread_messages = 0
-
-        updateContactById(contactSelectedCloned, id)
-    }
-
 
     const providerValues ={
         contactSelected,
         addNewMessages,
         deleteMessage,
         editMessage,
-        unreadMessagesToZero,
     }
 
     return(

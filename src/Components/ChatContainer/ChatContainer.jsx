@@ -19,9 +19,7 @@ function MessgaeContainer() {
         showEditComponent, 
         setShowEditComponent,
     } = useContext(MessageContext)
-    const { contactSelected, unreadMessagesToZero } = useContext(ContactDetailContext)
-
-    unreadMessagesToZero()
+    const { contactSelected } = useContext(ContactDetailContext)
 
     useEffect(
         () => {
