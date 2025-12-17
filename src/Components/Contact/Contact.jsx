@@ -7,10 +7,13 @@ function Contact(props) {
     /* Seteando la hora de envío del mensaje para que figura como, por ejemplo, 03:02 en vez de 3:2 */
     let sentAt
     if (lastMessage) {
+        const day = lastMessage.message_at.getDate()
+        const month = lastMessage.message_at.getMonth() + 1     // + 1 porque devuelve un número entre 0 y 11
+        const year = lastMessage.message_at.getFullYear()
         const hour = lastMessage.message_at.getHours() < 10 ? '0'+lastMessage.message_at.getHours() : lastMessage.message_at.getHours()
         const minute = lastMessage.message_at.getMinutes() < 10 ? '0'+lastMessage.message_at.getMinutes() : lastMessage.message_at.getMinutes()
 
-        sentAt = `${hour}:${minute}`
+        sentAt = `${day}/${month}/${year} - ${hour}:${minute}`
     }
 
     return (
