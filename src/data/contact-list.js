@@ -13,14 +13,14 @@ Explicación de la lista
 const concactListDataBase = [
     {
         contact_id: 1,
-        name: 'Gandalf the Grey',
+        name: 'Gollum',
         phone: 1134697584,
-        avatar: `https://scontent.faep14-3.fna.fbcdn.net/v/t39.30808-1/358641340_576837511324596_1257872081624141630_n.jpg?stp=c110.0.338.338a_dst-jpg_s200x200_tt6&_nc_cat=100&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=esxehfZU6zcQ7kNvwGj4Se5&_nc_oc=Admr2AKF3KRJRIrVoas0usYiSa40I8T19gBYIZ8Ia25osQntXatz177uCvXsb2HeAG1GUmqq43nHjUFm1-aous8j&_nc_zt=24&_nc_ht=scontent.faep14-3.fna&_nc_gid=IV_1bmHwxXt-HpMlznHb9g&oh=00_Afk5wAZAkVOA4BGO7-gxocsQjrYGLPstul0TCjmMOSPPtQ&oe=693A61A3`,
+        avatar: `https://miro.medium.com/v2/resize:fit:640/format:webp/0*yt7Mwvdb8e08xxhk.jpg`,
         unread_messages: 1,
         messages: [
             {
                 message_id: 1,
-                message: `YOU SHALL NOT PASS`,
+                message: `Mi precioso!!`,
                 message_at: new Date("November 29, 2025 17:12:12"),
                 isSentMessage: false,
                 message_state: null
@@ -75,7 +75,7 @@ const concactListDataBase = [
     },
     {
         contact_id: 4,
-        name: 'Aragon',
+        name: 'Aragorn',
         phone: 1134634584,
         avatar: `https://i.pinimg.com/736x/92/8f/b6/928fb663b8d316fc5aa3c39a2ab572a4.jpg`,
         unread_messages: 2,
