@@ -6,22 +6,8 @@ export const ContactDetailContext = createContext()
 
 const ContactDetailContextProvider = () => {
     const { id: id } = useParams()
-    const [contactSelected, setContactSelected] = useState(null)
-    const [isloadingContact, setIsLoadingContact] = useState(true)
     const { getContactById, updateContactById } = useContext(ContactListContext)
-
-    function loadContactById() {
-        setIsLoadingContact(true)
-        const timeoutId = setTimeout(
-            function() {
-                const contact = getContactById(id)
-                setContactSelected(contact)
-                setIsLoadingContact(false)
-            },
-            1000
-        )
-        return () => clearTimeout(timeoutId)
-    }
+    const contactSelected = getContactById(id)
 
     function addNewMessages(content) {
         /* 
@@ -33,7 +19,6 @@ const ContactDetailContextProvider = () => {
         const new_message_id = contactSelected.messages.length !== 0 ?
                                 contactSelected.messages[contactSelected.messages.length - 1].message_id + 1 :
                                 1
-
         const new_message = {
             message_id: new_message_id,
             message: content,
@@ -41,15 +26,13 @@ const ContactDetailContextProvider = () => {
             isSentMessage: true,
             message_state: 'NOT_SENT',
         }
-
         /* Clonamos el contacto seleccionado */
         const contactSelectedCloned = { ...contactSelected }
-
         /* Agregamos el nuevo mensaje a la lista del contacto clonado */
         contactSelectedCloned.messages.push(new_message)
-
         updateContactById(contactSelectedCloned, id)
     }
+
 
     function deleteMessage(messageIndex){
         /* Elimina el mensaje de la lista del contacto seleccionado (contactSelected) */
@@ -59,6 +42,7 @@ const ContactDetailContextProvider = () => {
         updateContactById(contactSelectedCloned, id)
     }
 
+
     function editMessage(messageIndex, text){
         /* Edita el mensaje seleccionado */
         const contactSelectedCloned = { ...contactSelected }
@@ -67,16 +51,9 @@ const ContactDetailContextProvider = () => {
         updateContactById(contactSelectedCloned, id)
     }
 
-    useEffect(
-        loadContactById,
-        [id, /* getContactById */]
-    )
-
 
     const providerValues ={
         contactSelected,
-        isloadingContact,
-        loadContactById,
         addNewMessages,
         deleteMessage,
         editMessage,

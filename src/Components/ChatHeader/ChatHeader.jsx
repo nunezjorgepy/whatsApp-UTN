@@ -2,11 +2,13 @@ import { Link } from 'react-router-dom'
 import './ChatHeader.css'
 import { useContext } from 'react';
 import { ContactDetailContext } from '../../Context/ContactDetailsContext';
+import { ContactListContext } from '../../Context/ContactListContext';
 
 function ChatHeader() {
-    const { contactSelected, isloadingContact } = useContext(ContactDetailContext)
+    const { contactSelected } = useContext(ContactDetailContext)
+    const { isloadingContacts } = useContext(ContactListContext)
 
-    if (isloadingContact) {
+    if (isloadingContacts) {
         return(
             <div className="chat_header">
                 <div className="show_contact_info">
@@ -14,19 +16,6 @@ function ChatHeader() {
                     <h2 className="chat_name loading_info">Cargando información del contacto...</h2>
                 </div>
             </div>
-        )
-    }
-
-    if (!contactSelected){
-        return(
-            <div className="chat_header">
-                {/* Tiene la clase img_container para mantener el alto del chatHeader */}
-                <h2 className="chat_name img_container loading_info">Lo sentimos, ha ocurrido un problema</h2>
-                <Link to="/" className="back_home">
-                    <i className="bi bi-arrow-left"></i>
-                </Link>
-            </div>
-            
         )
     }
 
