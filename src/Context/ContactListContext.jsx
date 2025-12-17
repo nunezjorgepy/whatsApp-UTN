@@ -24,6 +24,23 @@ const ContactListContextProvider = () => {
         )
     }
 
+    function filterContactList(list, filtro) {
+        const filtredList = list.filter(
+            /* Filtra la lista de contactos según el término buscado, pero sólo la renderiza si hay un término buscado */
+            (contact) => {
+                /* toLowerCase() asegura que si busco jorge, lo encuentre aunque el contacto sea Jorge, JoRgE o JORGE */
+                const name = contact.props.children.props.contact.name.toLowerCase()
+                const lowerFilter = filtro.toLowerCase()
+                if (name.includes(lowerFilter)) {
+                    return contact
+                }
+            }
+        )
+
+        return filtredList
+    }
+
+
     function getContactById(contact_id) {
         
         for(const contact of contactList){
@@ -63,6 +80,7 @@ const ContactListContextProvider = () => {
     const providerValues = {
         contactList,
         setContactList,
+        filterContactList,
         isloadingContacts,
         getContactById,
         updateContactById,
