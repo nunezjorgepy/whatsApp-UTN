@@ -17,6 +17,15 @@ function ChatHeader() {
         )
     }
 
+    if (!contactSelected){
+        return(
+            <div className="chat_header">
+                {/* Tiene la clase img_container para mantener el alto del chatHeader */}
+                <h2 className="chat_name img_container loading_info">Lo sentimos, ha ocurrido un problema</h2>
+            </div>
+        )
+    }
+
     return (
         <div className="chat_header">
             <button className="show_contact_info">

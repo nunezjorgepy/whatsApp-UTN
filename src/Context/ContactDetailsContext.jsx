@@ -12,14 +12,15 @@ const ContactDetailContextProvider = () => {
 
     function loadContactById() {
         setIsLoadingContact(true)
-        setTimeout(
+        const timeoutId = setTimeout(
             function() {
                 const contact = getContactById(id)
                 setContactSelected(contact)
                 setIsLoadingContact(false)
             },
-            2000
+            1000
         )
+        return () => clearTimeout(timeoutId)
     }
 
     function addNewMessages(content) {
@@ -68,7 +69,7 @@ const ContactDetailContextProvider = () => {
 
     useEffect(
         loadContactById,
-        [id]
+        [id, /* getContactById */]
     )
 
 

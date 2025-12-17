@@ -14,6 +14,12 @@ function MessgaesContainer() {
             <div className="msgs_container loading_info">Cargando mensajes...</div>
         )
     }
+
+    if (!contactSelected) {
+        return(
+            <div className="msgs_container loading_info">No se pudieron cargar los mensajes.</div>
+        )
+    }
     
     const HTMLMessages = contactSelected.messages.map(
         message => {

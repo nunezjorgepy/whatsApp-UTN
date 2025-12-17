@@ -20,7 +20,7 @@ const ContactListContextProvider = () => {
 
                 setIsLoadingContacts(false)
             },
-            2000
+            1000
         )
     }
 
