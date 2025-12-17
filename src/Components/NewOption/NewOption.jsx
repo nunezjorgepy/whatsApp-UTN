@@ -36,11 +36,14 @@ function NewOption() {
             setIsWrongName(true)
             return
         }
-        if (!verifyPhone()) {
+        setIsWrongName(false)
+        if (!verifyPhone(newPhone)) {
             /* Si el teléfono es incorrecto, muestra el mensaje por pantalla y no permite continuar */
             setIsWrongPhone(true)
             return
         }
+        setIsWrongPhone(false)
+        
 
         /* Creando el nuevo contacto */
         const new_contact = {
