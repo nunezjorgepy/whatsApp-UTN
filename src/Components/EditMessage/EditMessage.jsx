@@ -1,9 +1,11 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import './EditMessage.css'
 import { MessageContext } from '../../Context/MessageContext'
 import { ContactDetailContext } from '../../Context/ContactDetailsContext'
+import { ContactListContext } from '../../Context/ContactListContext'
 
 function EditMessage() {
+    const [isWrongEdit, setIsWrongEdit] = useState(false)
     const { 
         showEditComponent, 
         setShowEditComponent,
@@ -12,12 +14,18 @@ function EditMessage() {
         messageIndex,
     } = useContext(MessageContext)
     const { editMessage } = useContext(ContactDetailContext)
+    const { verifyTextInput } = useContext(ContactListContext)
 
     function handleButtonPress(e, isSend) {
         e.preventDefault()
 
         /* Si presioné en el botón Acpetar, envía el mensaje */
         if (isSend) {
+            /* Salvo que haya un mensaje invñalido */
+            if (!verifyTextInput(messageToEdit)){
+                setIsWrongEdit(true)
+                return
+            }
             editMessage(messageIndex, messageToEdit)
         }
 
@@ -38,6 +46,7 @@ function EditMessage() {
                     >
 
                 </textarea>
+                {isWrongEdit && <span className='error_edit'>Error: no se puede enviar un mensaje vacío</span>}
                 <div className="messages_popup_btns_container">
                     <button onClick={(e) => handleButtonPress(e, true)} className="messages_popup_btn">
                         Aceptar

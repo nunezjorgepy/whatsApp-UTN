@@ -14,6 +14,7 @@
   --seen-msg: #007BFC;
   --unseen-msg: rgba(0,0,0,0.2);
   --msg-bg-color: #D9FDD3;
+  --warning-color: rgb(184, 5, 49);
 
   /* Medidas */
   --small-screens-size: 800px;

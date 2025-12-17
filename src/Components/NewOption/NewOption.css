@@ -45,7 +45,7 @@
     margin-bottom: 25px;
 }
 .invalid_field{
-    color: red;
+    color: var(--warning-color);
     font-size: 10px;
     padding-left: 10px;
 }
