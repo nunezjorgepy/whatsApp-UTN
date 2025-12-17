@@ -4,20 +4,16 @@ import { useContext } from 'react'
 import { ContactDetailContext } from '../../Context/ContactDetailsContext'
 /* Componentes */
 import Message from '../Message/Message'
+import { ContactListContext } from '../../Context/ContactListContext'
 
 
 function MessgaesContainer() {
     const { contactSelected, isloadingContact } = useContext(ContactDetailContext)
+    const { isloadingContacts } = useContext(ContactListContext)
     
-    if (isloadingContact) {
+    if (isloadingContacts) {
         return (
             <div className="msgs_container loading_info">Cargando mensajes...</div>
-        )
-    }
-
-    if (!contactSelected) {
-        return(
-            <div className="msgs_container loading_info">No se pudieron cargar los mensajes.</div>
         )
     }
     
