@@ -8,7 +8,7 @@ import { ContactListContext } from '../../Context/ContactListContext'
 
 
 function MessgaesContainer() {
-    const { contactSelected, isloadingContact } = useContext(ContactDetailContext)
+    const { contactSelected } = useContext(ContactDetailContext)
     const { isloadingContacts } = useContext(ContactListContext)
     
     if (isloadingContacts) {

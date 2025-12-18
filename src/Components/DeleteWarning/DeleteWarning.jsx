@@ -14,6 +14,11 @@ function DeleteWarning() {
         
     }
 
+    function cancelSubmit(e) {
+        e.preventDefault()
+        setShowDeleteWarning(!showDeleteWarning)
+    }
+
     return (
         <form className="messages_popup_form">
             <div className="messages_popup_container">
@@ -22,7 +27,7 @@ function DeleteWarning() {
                     <button onClick={(e) => handleDeleteSubmit(e)} className="messages_popup_btn messages_popup_yes_btn">
                         Si
                     </button>
-                    <button onClick={() => setShowDeleteWarning(!showDeleteWarning)} className="messages_popup_btn messages_popup_no_btn">
+                    <button onClick={(e) => cancelSubmit(e)} className="messages_popup_btn messages_popup_no_btn">
                         No
                     </button>
                 </div>

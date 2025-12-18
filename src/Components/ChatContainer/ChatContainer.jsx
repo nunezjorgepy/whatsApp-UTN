@@ -19,14 +19,17 @@ function MessgaeContainer() {
         showEditComponent, 
         setShowEditComponent,
     } = useContext(MessageContext)
-    const { contactSelected } = useContext(ContactDetailContext)
+    const { unreadMessagesToZero } = useContext(ContactDetailContext)
+
+    
 
     useEffect(
         () => {
+            unreadMessagesToZero()
             setShowDeleteWarning(false)
             setShowEditComponent(false)
         },
-        [contactSelected]
+        []
     )
 
     return (

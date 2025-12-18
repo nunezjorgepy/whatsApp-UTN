@@ -51,12 +51,25 @@ const ContactDetailContextProvider = () => {
         updateContactById(contactSelectedCloned, id)
     }
 
+    function unreadMessagesToZero() {
+        /* Setea la propiedad de mensajes no leídos a 0 (cuando ingresa en el chat) */
+        /* 
+            La función no funciona correctamente. Para que se elimine el circulo verde del contacto, tengo que entrar, volver a la página principal y volver a entrar al chat.
+            Además, si saco la función del useEffect, la página se empieza a renderizar indefinidamente y se cuelga.
+        */
+        const contactSelectedCloned = { ...contactSelected }
+        contactSelectedCloned.unread_messages = 0
+
+        updateContactById(contactSelectedCloned, id)
+    }
+
 
     const providerValues ={
         contactSelected,
         addNewMessages,
         deleteMessage,
         editMessage,
+        unreadMessagesToZero,
     }
 
     return(
