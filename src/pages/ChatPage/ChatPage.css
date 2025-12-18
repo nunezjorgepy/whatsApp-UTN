@@ -1,0 +1,10 @@
+.nothing_to_show{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    font-size: 2rem;
+    color: var(--unread-msg);
+    text-align: center;
+    text-shadow: 1px 1px 1px gray;
+}

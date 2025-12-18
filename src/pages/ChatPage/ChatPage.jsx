@@ -1,3 +1,4 @@
+import './ChatPage.css'
 import ContactContainer from "../../Components/ContactsContainer/ContactContainer"
 import ChatContainer from "../../Components/ChatContainer/ChatContainer"
 

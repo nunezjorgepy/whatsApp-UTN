@@ -5,7 +5,7 @@
   --neutral-000: #FFFFFF;
   --neutral-100: #F7F5F3;
   --neutral-200: #F6F5F4;
-
+  --neutral-500: #6A6A6A;
   --neutral-600: #3A3A3A;
   --neutral-900: #0A0A0A;
   --neutral-1000-alpha-06: #00000099;
@@ -48,22 +48,16 @@ button{
 }
 
 /* Clase genérica (se usa en varios componentes) */
-.nothing_to_show, .loading_info{
-  /* Usada cuando no hay chat abierto o mensajes para mostrar */
+.loading_info{
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 1;
   font-size: 2rem;
   color: var(--unread-msg);
+  text-align: center;
   text-shadow: 1px 1px 1px gray;
 }
 .loading_info{
   font-size: 16px;
-}
-
-@media screen and (max-width: 800px) {
-    .nothing_to_show{
-        display: none;
-    }
 }

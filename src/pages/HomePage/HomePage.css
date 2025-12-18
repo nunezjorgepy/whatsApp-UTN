@@ -1,0 +1,35 @@
+
+.no_chat_opened{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-shadow: none;
+    gap: 10px;
+    flex: 1;
+}
+.no_chat_whatsapp{
+    font-size: 62px;
+    color: var(--neutral-500);
+    margin-bottom: 60px;
+}
+.no_chat_title{
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+.no_chat_p, .no_chat_span{
+    font-size: 16px;
+    color: var(--neutral-500);
+    text-align: center;
+    width: min(90%, 600px);
+}
+.no_chat_span{
+    margin-top: 150px;
+}
+
+@media screen and (max-width: 800px) {
+    .no_chat_opened{
+        display: none;
+    }
+}
