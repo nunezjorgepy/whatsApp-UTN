@@ -19,6 +19,15 @@ function ChatHeader() {
         )
     }
 
+    if (!contactSelected) {
+        /* Si no encuentra al contacto, no muestra nada (la página de error se muestra en MessageContainer.jsx) */
+        return(
+            <>
+                
+            </>
+        )
+    }
+
     return (
         <div className="chat_header">
             <button className="show_contact_info">

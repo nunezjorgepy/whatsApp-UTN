@@ -19,7 +19,7 @@ function MessgaeContainer() {
         showEditComponent, 
         setShowEditComponent,
     } = useContext(MessageContext)
-    const { unreadMessagesToZero } = useContext(ContactDetailContext)
+    const { contactSelected, unreadMessagesToZero } = useContext(ContactDetailContext)
 
     
 
@@ -40,8 +40,8 @@ function MessgaeContainer() {
             {/* Mensajes */}
             <MessagesContainer />
 
-            {/* Enviar Mensaje */}
-            <MessageTextarea />
+            {/* Enviar Mensaje (solo si el contacto fue encontrado) */}
+            {contactSelected && <MessageTextarea />}
 
             {/* Advertencia de eliminar mensaje */}
             {showDeleteWarning && <DeleteWarning />}

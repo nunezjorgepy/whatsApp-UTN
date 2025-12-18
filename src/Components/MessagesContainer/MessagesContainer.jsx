@@ -5,6 +5,7 @@ import { ContactDetailContext } from '../../Context/ContactDetailsContext'
 /* Componentes */
 import Message from '../Message/Message'
 import { ContactListContext } from '../../Context/ContactListContext'
+import NoContactFound from '../NoContactFound/NoContactFound'
 
 
 function MessgaesContainer() {
@@ -12,8 +13,16 @@ function MessgaesContainer() {
     const { isloadingContacts } = useContext(ContactListContext)
     
     if (isloadingContacts) {
+        /* Mientras que carga la página... */
         return (
             <div className="msgs_container loading_info">Cargando mensajes...</div>
+        )
+    }
+
+    if (!contactSelected) {
+        /* Si buscas un contacto que no existe */
+        return(
+            <NoContactFound />
         )
     }
     

@@ -1,0 +1,20 @@
+.no_contact_found_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    gap: 50px;
+    text-align: center;
+}
+.no_contact_sad_icon{
+    font-size: 72px;
+    color: var(--neutral-500);
+}
+.no_contact_p{
+    font-weight: 600;
+    color: var(--neutral-600);
+}
+.no_contact_home{
+    font-size: 22px;
+}
