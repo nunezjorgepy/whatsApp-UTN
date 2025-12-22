@@ -58,7 +58,6 @@ function Message(props) {
                     {/*
                         La opción de editar se muestra solamente para los mensajes enviados
                         La opción de eliminar se muestra en ambos
-                        La opción de reaccionar se muestra solamente en los mensajes recibidos
                     */}
                     {message.isSentMessage && 
                     <button onClick={handleEditButton} className="msg_option edit_message">
