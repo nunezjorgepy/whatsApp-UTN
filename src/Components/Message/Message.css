@@ -14,6 +14,9 @@
     padding: 5px 10px;
     margin-bottom: 20px;
 }
+.message_text{
+    word-break: break-all;
+}
 .message_hour{
     display: flex;
     font-size: 10px;
