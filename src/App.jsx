@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
-import HomePage from './pages/HomePage/HomePage'
-import ChatPage from './pages/ChatPage/ChatPage'
+import HomePage from './Pages/HomePage/HomePage'
+import ChatPage from './Pages/ChatPage/ChatPage'
 import ContactListContextProvider from './Context/ContactListContext'
 import ContactDetailContextProvider from './Context/ContactDetailsContext'
 import MessageContextProvider from './Context/MessageContext'
