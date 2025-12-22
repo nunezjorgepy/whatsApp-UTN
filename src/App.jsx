@@ -14,8 +14,8 @@ function App() {
         <Route element={<ContactListContextProvider/>}>
           <Route path='/' element={<HomePage />} />
 
-          <Route path='/chat/:id' element={<MessageContextProvider />}>
-            <Route path='/chat/:id' element={<ContactDetailContextProvider />}>
+          <Route path='/chat/:id' element={<ContactDetailContextProvider />}>
+            <Route element={<MessageContextProvider />}>
               <Route path='/chat/:id/messages' element={<ChatPage />} />
             </Route>
           </Route>

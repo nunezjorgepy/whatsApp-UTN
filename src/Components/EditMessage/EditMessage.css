@@ -39,7 +39,6 @@
     color: var(--unread-msg);
     font-weight: 600;
     letter-spacing: 1px;
-    text-shadow: 0 0 1px var(--neutral-900);
 }
 .edit_container{
     gap: 15px;
