@@ -15,7 +15,7 @@
     margin-bottom: 20px;
 }
 .message_text{
-    word-break: break-all;
+    word-break: break-word;
 }
 .message_hour{
     display: flex;
